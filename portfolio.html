@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포트폴리오</title>
+    
+    <style>
+        /* 일반 스타일 */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            box-sizing: border-box; /* 전체 요소의 패딩과 테두리를 포함하여 너비 및 높이 계산 */
+        }
+
+        header {
+            background-image: url("https://www.notion.so/image/https%3A%2F%2Fwww.koreaitacademy.com%2Fm%2Fimg%2Fcurriculum%2Fweb01.jpg?table=block&id=fd18bbae-9f8f-45fa-9958-3afe4ae5a740&spaceId=053dc54c-cdd9-4b00-8c02-a68aaa3526cd&width=1610&userId=ed61468e-bbb9-4b3e-a789-4933aa43a226&cache=v2");
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            padding: 60px 20px;
+            text-align: center;
+            position: relative;
+            box-sizing: border-box; /* 패딩 및 테두리를 포함하여 너비 계산 */
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        header h1, header nav ul {
+            position: relative;
+            z-index: 2;
+        }
+
+        header nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        header nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        header nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.7);
+            color: #333;
+        }
+
+        /* 소개 섹션 */
+        .about {
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box; /* 패딩 및 테두리를 포함하여 너비 계산 */
+        }
+
+        .about h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .about-content img {
+            border-radius: 40px;
+            width: 250px;
+            height: auto;
+        }
+
+        .about-text {
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        /* 푸터 */
+        .footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            box-sizing: border-box; /* 패딩 및 테두리를 포함하여 너비 계산 */
+        }
+
+        .about > ul > li > b {
+            color: orange;
+        }
+
+        h1 {
+            border: 2px solid white; /* 흰색 테두리 설정 */
+            padding: 20px; /* 테두리와 내용 사이에 여백 추가 */
+            background-color: #8d8d8d; /* 텍스트 가독성을 위한 배경색 설정 */
+            color: white; /* 텍스트 색상 설정 */
+            text-align: center; /* 텍스트 중앙 정렬 */
+            margin: 50px; /* 상하좌우 여백 추가 */
+        }
+
+        /* 캐러셀 섹션 스타일 */
+        .projects {
+            position: relative;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box; /* 패딩 및 테두리를 포함하여 너비 계산 */
+        }
+
+        .carousel {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel-wrapper {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-item {
+            min-width: 100%;
+            box-sizing: border-box;
+            padding: 20px;
+            background-color: #f4f4f4;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .carousel-item h3 {
+            margin: 0;
+            padding-bottom: 10px;
+        }
+
+        .carousel-item p {
+            margin: 0;
+        }
+
+        .carousel-item > button:hover {
+            background-color: #555; /* 조금 더 어두운 회색으로 변경 */
+            color: #fff; /* 텍스트 색상을 흰색으로 변경 */
+            border: 1px solid #fff; /* 흰색 테두리 추가 */
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* 부드러운 그림자 추가 */
+            transform: scale(1.05); /* 마우스 호버 시 버튼이 약간 커지도록 */
+            transition: all 0.3s ease; /* 부드러운 트랜지션 효과 */
+        }
+
+        .carousel-control {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 2;
+            font-size: 24px;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel-control.prev {
+            left: 10px;
+        }
+
+        .carousel-control.next {
+            right: 10px;
+        }
+
+        /* 이동 애니메이션 */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* 도구 섹션 스타일 */
+        .section {
+            width: 100%;
+            overflow-x: auto; /* 테이블이 너무 넓을 때 수평 스크롤 추가 */
+            padding: 0; /* 여백 제거 */
+            margin: 0; /* 여백 제거 */
+            box-sizing: border-box; /* 패딩 및 테두리를 포함하여 너비 계산 */
+        }
+
+        /* 테이블 스타일 */
+        .tool {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            min-width: 600px; /* 테이블이 너무 좁아지지 않도록 최소 너비 설정 */
+            box-sizing: border-box; /* 패딩 및 테두리를 포함하여 너비 계산 */
+        }
+
+        .tool th, .tool td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+            box-sizing: border-box; /* 패딩 및 테두리를 포함하여 너비 계산 */
+        }
+
+        .tool th {
+            background-color: #f4f4f4;
+        }
+
+        .tool td {
+            background-color: #fff;
+        }
+
+        .tool tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        /* 모달 스타일 */
+        .modal {
+            display: none; /* 기본적으로 숨김 */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5); /* 어두운 배경색 */
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* 모달 창의 너비 조정 */
+            max-width: 600px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 헤더 섹션 -->
+    <header class="header">
+        <h1>나의 포트폴리오</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">소개</a></li>
+                <li><a href="#projects">프로젝트</a></li>
+                <li><a href="#certification">자격증</a></li>
+                <li><a href="#tool">기술 및 도구</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 소개 섹션 -->
+    <section id="about" class="about">
+        <h2>🙋‍♀️ 소개</h2>
+        <hr style="margin-bottom: 20px;">
+        
+        <div class="about-content">
+            <img src="img/내 사진.jpg" alt="내 이미지" />
+            <div class="about-text">
+                <span>
+                    안녕하세요 👋<br>
+                    프론트엔드로 세상을 바꾸고 싶은,<br>
+                    프론트엔드 개발자 송지민 입니다 ‼<br><br>
+
+                    🎂 Birth : <i style="color: rgb(147, 147, 147);">2000.11.24</i><br>
+                    ✉️ E-Mail & 🐱 Github<br>
+                    &nbsp; &nbsp;👉 <i style="color: rgb(147, 147, 147);">ellie1364@naver.com</i><br>
+                </span>
+            </div>
+        </div>
+
+        <ul style="margin-top: 30px;">
+            <li>쉽게 코딩하는 프론트엔드 개발자가 될 거예요.</li>
+            <li>개발 과정에서 항상 사용자의 입장을 생각해요.</li>
+            <li>꾸준하게 공부하며 항상 성장하려고 노력해요.</li>
+            <li>🌱 현재 <b>HTML</b> & <b>CSS</b> & <b>JAVASCRIPT</b>와 <b>jQery</b>, <b>React</b>를 배우고 있습니다 📚</li>
+        </ul>
+    </section>
+
+    <!-- 프로젝트 섹션 -->
+    <section id="projects" class="projects">
+        <h2>📝 프로젝트</h2>
+
+        <div class="carousel">
+            <button class="carousel-control prev" aria-label="Previous slide">&#10094;</button>
+
+            <div class="carousel-wrapper">
+                <div class="carousel-item">
+                    <h3 style="color: darkgreen;">졸업 작품</h3>
+                    <img src="img/Untitled (2).png" alt="프로젝트 1 이미지" />
+                    <h4 style="color: rgb(21, 127, 21);">
+                        MZ 세대를 대상으로 한 맞춤형 향수 추천 쇼핑몰
+                    </h4>
+                    <b style="color: #8d8d8d;">HTML</b> | <b style="color: #8d8d8d;">CSS</b> 
+                    | <b style="color: #8d8d8d;">JavaScript</b>
+                    <p>2024년 4월 23일 ➡ 2024년 12월 20일</p>
+                    
+                    <button class="open-modal" data-modal="modal1"
+                        style="margin-top: 20px; border-radius: 50%;
+                        padding: 10px 20px;"
+                    >
+                        상세 보기
+                    </button>
+                </div>
+
+                <!-- 추가적인 슬라이드를 여기에 추가하세요 -->
+                <div class="carousel-item">
+                    <h3>프로젝트 1</h3>
+                    <img src="img/Untitled (2).png" alt="프로젝트 1 이미지" />
+                    <p>MZ 세대를 대상으로 한 맞춤형 향수 추천 쇼핑몰</p>
+                    <b style="color: #8d8d8d;">HTML</b> | <b style="color: #8d8d8d;">CSS</b> 
+                    | <b style="color: #8d8d8d;">JavaScript</b>
+                    <p>2024년 4월 23일 ➡ 2024년 12월 20일</p>
+                    
+                    <button class="open-modal" data-modal="modal1"
+                        style="margin-top: 20px; border-radius: 50%;
+                        padding: 10px 20px;"
+                    >
+                        상세 보기
+                    </button>
+                </div>
+
+                <div class="carousel-item">
+                    <h3>프로젝트 1</h3>
+                    <img src="img/Untitled (2).png" alt="프로젝트 1 이미지" />
+                    <p>MZ 세대를 대상으로 한 맞춤형 향수 추천 쇼핑몰</p>
+                    <b style="color: #8d8d8d;">HTML</b> | <b style="color: #8d8d8d;">CSS</b> 
+                    | <b style="color: #8d8d8d;">JavaScript</b>
+                    <p>2024년 4월 23일 ➡ 2024년 12월 20일</p>
+                    
+                    <button class="open-modal" data-modal="modal1"
+                        style="margin-top: 20px; border-radius: 50%;
+                        padding: 10px 20px;"
+                    >
+                        상세 보기
+                    </button>
+                </div>
+            </div>
+            <button class="carousel-control next" aria-label="Next slide">&#10095;</button>
+        </div>
+    </section>
+
+    <!-- 모달 팝업 -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 style="color: darkgreen;">졸업 작품</h2>
+            <img src="img/Untitled (2).png" alt="프로젝트 1 이미지" style="width: 100%; height: auto;" />
+            <h3 style="color: rgb(21, 127, 21);">
+                MZ 세대를 대상으로 한 맞춤형 향수 추천 쇼핑몰
+            </h3>
+            <b style="color: #8d8d8d;">HTML</b> | <b style="color: #8d8d8d;">CSS</b> 
+            | <b style="color: #8d8d8d;">JavaScript</b>
+            <p>2024년 4월 23일 ➡ 2024년 12월 20일</p>
+            <p><b>개발 인원(역할)</b> : 3명 (2명은 백엔드 / 1명은 프론트엔드)</p>
+            
+            <h3 style="margin-top: 30px;">
+                📖 내용
+            </h3>
+            <hr>
+            <h2>개요</h2>
+            <p
+                style="border: 1px solid darkgreen;
+                padding: 10px 20px; border-radius: 10px;"
+            >
+                이 프로젝트는 <strong>MZ세대 대상</strong>으로 한 <strong>맞춤형 향수 추천 쇼핑몰</strong> 입니다.<br>
+                이 프로젝트의 목표는 개성과 취향을 중시하는 MZ 세대가<br>
+                자신의 스타일과 성격에 맞는 향수를 쉽게 찾을 수 있도록 돕는 것입니다.
+            </p>
+
+            <h2>프로젝트 목표</h2>
+            <p
+                style="border: 1px solid darkgreen;
+                padding: 10px 20px; border-radius: 10px;"
+            >
+                ▶ 맞춤형 향수 추천을 통해 사용자의 선택의 어려움을 줄이기<br>
+                ▶ 향수 입문 자들이 쉽게 접근할 수 있는 환경 조성<br>
+                ▶ MZ 세대를 타겟 으로 한 효과적인 마케팅 전략 수립   
+            </p>
+
+            <h2>주요 기능</h2>
+            <p
+                style="border: 1px solid darkgreen;
+                padding: 10px 20px; border-radius: 10px;"
+            >
+                ▶ <b>옷 스타일에 맞는 향수 추천 테스트</b><br>
+                &nbsp;&nbsp;▪ 사용자의 옷 스타일을 선택하면 해당 스타일에 어울리는 향수를 추천<br>
+                ▶ <b>향수 MBTI 테스트</b><br>
+                &nbsp;&nbsp;▪ MBTI 성격 유형과 유사한 테스트를 통해 사용자의 성격과<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;취향을 분석, 맞춤형 향수 추천  
+            </p>
+        </div>
+    </div>
+
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>졸업 작품</h2>
+            <img src="img/Untitled (2).png" alt="프로젝트 1 이미지" style="width: 100%; height: auto;" />
+            <p>MZ 세대를 대상으로 한 맞춤형 향수 추천 쇼핑몰</p>
+            <b style="color: #8d8d8d;">HTML</b> | <b style="color: #8d8d8d;">CSS</b> 
+            | <b style="color: #8d8d8d;">JavaScript</b>
+            <p>2024년 4월 23일 ➡ 2024년 12월 20일</p>
+            <p>프로젝트에 대한 상세한 설명을 여기에 입력하세요...</p>
+        </div>
+    </div>
+
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>졸업 작품</h2>
+            <img src="img/Untitled (2).png" alt="프로젝트 1 이미지" style="width: 100%; height: auto;" />
+            <p>MZ 세대를 대상으로 한 맞춤형 향수 추천 쇼핑몰</p>
+            <b style="color: #8d8d8d;">HTML</b> | <b style="color: #8d8d8d;">CSS</b> 
+            | <b style="color: #8d8d8d;">JavaScript</b>
+            <p>2024년 4월 23일 ➡ 2024년 12월 20일</p>
+            <p>프로젝트에 대한 상세한 설명을 여기에 입력하세요...</p>
+        </div>
+    </div>
+
+    <!-- 자격증 섹션 -->
+    <section id="certification" class="certification"
+        style="background-color: white; padding: 20px 30px;
+        border-radius: 10px; margin-bottom: 30px;"
+    >
+        <h2>🏅 자격증</h2>
+        <hr>
+        <h3 style="color: skyblue;">ITQ</h3>
+    </section>
+
+    <!-- 도구 섹션 -->
+    <section id="tool" class="section"
+        style="background-color: white; padding: 20px 30px;
+        border-radius: 10px; margin-bottom: 30px;"
+    >
+        <h2>⛏️ 기술 및 도구</h2>
+        <hr>
+        <table class="tool">
+            <thead>
+                <tr>
+                    <th>구분</th>
+                    <th>많이 해봤어요</th>
+                    <th>해본 적 있어요</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>언어</td>
+                    <td>JavaScript</td>
+                    <td>Java, Python</td>
+                </tr>
+                <tr>
+                    <td>백엔드</td>
+                    <td></td>
+                    <td>Node.js</td>
+                </tr>
+                <tr>
+                    <td>프론트엔드</td>
+                    <td>CSS3, HTML5</td>
+                    <td>React</td>
+                </tr>
+                <tr>
+                    <td>RDBMS (관계형 데이터베이스 관리 시스템)</td>
+                    <td>Oracle</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>DevOps [Development & Operations]</td>
+                    <td></td>
+                    <td>Git</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- 푸터 섹션 -->
+    <footer class="footer">
+        <p style="text-align: left; font-style: italic;">
+            &copy; 2024 나의 포트폴리오
+        </p>
+    </footer>
+
+    <script>
+        // 스크롤 애니메이션을 위한 JavaScript
+        window.addEventListener('scroll', () => {
+            const aboutSection = document.querySelector('.about');
+            const projectsSection = document.querySelector('.projects');
+            const certificationSection = document.querySelector('.certification');
+            const toolSection = document.querySelector('.tool');
+
+            const fadeInSection = (section) => {
+                const sectionPos = section.getBoundingClientRect().top;
+                const screenPos = window.innerHeight / 1.3;
+
+                if(sectionPos < screenPos) {
+                    section.style.animation = 'fadeInUp 1s ease-in-out forwards';
+                }
+            };
+            fadeInSection(aboutSection);
+            fadeInSection(projectsSection);
+            fadeInSection(certificationSection);
+            fadeInSection(toolSection);
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const carouselWrapper = document.querySelector('.carousel-wrapper');
+            const items = document.querySelectorAll('.carousel-item');
+            const itemCount = items.length;
+            const itemWidth = items[0].clientWidth;
+            let index = 0;
+
+            function moveToSlide(newIndex) {
+                index = (newIndex + itemCount) % itemCount;
+                const offset = -index * itemWidth;
+                carouselWrapper.style.transform = `translateX(${offset}px)`;
+            }
+
+            function moveToNextSlide() {
+                moveToSlide(index + 1);
+            }
+
+            function moveToPrevSlide() {
+                moveToSlide(index - 1);
+            }
+
+            // 자동 슬라이드 전환
+            setInterval(moveToNextSlide, 5000);
+
+            // 좌우 화살표 버튼 이벤트 리스너
+            document.querySelector('.carousel-control.next').addEventListener('click', moveToNextSlide);
+            document.querySelector('.carousel-control.prev').addEventListener('click', moveToPrevSlide);
+        });
+
+        // 모달 열고 닫는 동작 처리하는 코드
+        document.addEventListener('DOMContentLoaded', () => {
+            const modalBtns = document.querySelectorAll('.open-modal');
+            const modals = document.querySelectorAll('.modal');
+            const closeBtns = document.querySelectorAll('.close');
+
+            modalBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const modalId = btn.getAttribute('data-modal');
+                    document.getElementById(modalId).style.display = 'block';
+                });
+            });
+
+            closeBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    btn.parentElement.parentElement.style.display = 'none';
+                });
+            });
+
+            window.addEventListener('click', (event) => {
+                if (event.target.classList.contains('modal')) {
+                    event.target.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
