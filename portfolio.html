@@ -286,6 +286,25 @@
             text-decoration: none;
             cursor: pointer;
         }
+
+        .video-container {
+            max-width: 100%;
+            width: 500px;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .video-container:hover {
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        video {
+            width: 100%;
+            border-radius: 10px;
+        }
     </style>
 </head>
 
@@ -317,17 +336,23 @@
                     프론트엔드 개발자 송지민 입니다 ‼<br><br>
 
                     🎂 Birth : <i style="color: rgb(147, 147, 147);">2000.11.24</i><br>
-                    ✉️ E-Mail & 🐱 Github<br>
-                    &nbsp; &nbsp;👉 <i style="color: rgb(147, 147, 147);">ellie1364@naver.com</i><br>
+                    ✉️ E-Mail : ellie1364@naver.com<br>
+                    🐱 Github :<br>
+                    &nbsp; &nbsp;👉
+                        <a href="https://github.com/usessss" 
+                            style="text-decoration: none; color: rgb(147, 147, 147);"
+                        >
+                            https://github.com/usessss
+                        </a><br>
                 </span>
             </div>
         </div>
 
         <ul style="margin-top: 30px;">
-            <li>쉽게 코딩하는 프론트엔드 개발자가 될 거예요.</li>
-            <li>개발 과정에서 항상 사용자의 입장을 생각해요.</li>
-            <li>꾸준하게 공부하며 항상 성장하려고 노력해요.</li>
-            <li>🌱 현재 <b>HTML</b> & <b>CSS</b> & <b>JAVASCRIPT</b>와 <b>jQery</b>, <b>React</b>를 배우고 있습니다 📚</li>
+            <li>💻 <b>쉽게 코딩하는 프론트엔드 개발자</b>가 될 거예요.</li>
+            <li>🌍 <b>사용자의 입장을 생각</b>하며 개발 과정에 임합니다.</li>
+            <li>📚 <b>꾸준하게 공부</b>하며 항상 성장하려고 노력해요.</li>
+            <li>🌱 현재 <b>HTML</b> & <b>CSS</b> & <b>JAVASCRIPT</b>와 <b>React</b>를 배우고 있습니다 📚</li>
         </ul>
     </section>
 
@@ -340,14 +365,20 @@
 
             <div class="carousel-wrapper">
                 <div class="carousel-item">
-                    <h3 style="color: darkgreen;">졸업 작품</h3>
-                    <img src="img/Untitled (2).png" alt="프로젝트 1 이미지" />
+                    <h3 style="color: darkgreen;">
+                        졸업 작품
+                    </h3>
+                    <img src="img/Untitled (2).png" alt="프로젝트 1 이미지" 
+                        style="border-radius: 10px;"
+                    />
                     <h4 style="color: rgb(21, 127, 21);">
                         MZ 세대를 대상으로 한 맞춤형 향수 추천 쇼핑몰
                     </h4>
                     <b style="color: #8d8d8d;">HTML</b> | <b style="color: #8d8d8d;">CSS</b> 
                     | <b style="color: #8d8d8d;">JavaScript</b>
-                    <p>2024년 4월 23일 ➡ 2024년 12월 20일</p>
+                    <p style="margin-top: 10px;">
+                        📅 2024년 4월 23일 ~
+                    </p>
                     
                     <button class="open-modal" data-modal="modal1"
                         style="margin-top: 20px; border-radius: 50%;
@@ -359,14 +390,25 @@
 
                 <!-- 추가적인 슬라이드를 여기에 추가하세요 -->
                 <div class="carousel-item">
-                    <h3>프로젝트 1</h3>
-                    <img src="img/Untitled (2).png" alt="프로젝트 1 이미지" />
-                    <p>MZ 세대를 대상으로 한 맞춤형 향수 추천 쇼핑몰</p>
-                    <b style="color: #8d8d8d;">HTML</b> | <b style="color: #8d8d8d;">CSS</b> 
-                    | <b style="color: #8d8d8d;">JavaScript</b>
-                    <p>2024년 4월 23일 ➡ 2024년 12월 20일</p>
-                    
-                    <button class="open-modal" data-modal="modal1"
+                    <h3 style="color: rgb(97, 61, 14);">
+                        온라인 중고 거래 사이트
+                    </h3>
+                    <img src="img/Untitled (5).png" alt="프로젝트 2 이미지" 
+                        style="width: 500px; border-radius: 10px;"
+                    />
+                    <h4 style="color: rgb(71, 46, 46);">
+                        Dynamic Web Project로 만든 중고 거래 사이트
+                    </h4>
+                    <div style="display: block;">
+                        <b style="color: #8d8d8d;">Java</b> | <b style="color: #8d8d8d;">Jsp</b> 
+                        | <b style="color: #8d8d8d;">Sql</b> | <b style="color: #8d8d8d;">HTML</b>
+                        | <b style="color: #8d8d8d;">CSS</b> | <b style="color: #8d8d8d;">JavaScript</b>
+                    </div>
+                    <p style="margin-top: 10px;">
+                        📅 3학년 1학기 기말고사 개인 프로젝트
+                    </p>
+
+                    <button class="open-modal" data-modal="modal2"
                         style="margin-top: 20px; border-radius: 50%;
                         padding: 10px 20px;"
                     >
@@ -375,14 +417,20 @@
                 </div>
 
                 <div class="carousel-item">
-                    <h3>프로젝트 1</h3>
-                    <img src="img/Untitled (2).png" alt="프로젝트 1 이미지" />
-                    <p>MZ 세대를 대상으로 한 맞춤형 향수 추천 쇼핑몰</p>
+                    <h3 style="color: purple;">
+                        나만의 포트폴리오
+                    </h3>
+                    <img src="img/image.png" alt="프로젝트 3 이미지" 
+                        style="border-radius: 10px; width: 100%;"
+                    />
+                    <h4 style="color: plum;">
+                        나를 소개하는 페이지 개발하기
+                    </h4>
                     <b style="color: #8d8d8d;">HTML</b> | <b style="color: #8d8d8d;">CSS</b> 
                     | <b style="color: #8d8d8d;">JavaScript</b>
-                    <p>2024년 4월 23일 ➡ 2024년 12월 20일</p>
+                    <p>📅 2024년 8월 9일</p>
                     
-                    <button class="open-modal" data-modal="modal1"
+                    <button class="open-modal" data-modal="modal3"
                         style="margin-top: 20px; border-radius: 50%;
                         padding: 10px 20px;"
                     >
@@ -390,6 +438,7 @@
                     </button>
                 </div>
             </div>
+
             <button class="carousel-control next" aria-label="Next slide">&#10095;</button>
         </div>
     </section>
@@ -398,16 +447,22 @@
     <div id="modal1" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h2 style="color: darkgreen;">졸업 작품</h2>
-            <img src="img/Untitled (2).png" alt="프로젝트 1 이미지" style="width: 100%; height: auto;" />
+            <h2 style="color: darkgreen; text-align: center;">
+                졸업 작품
+            </h2>
+            <img src="img/Untitled (2).png" alt="프로젝트 1 이미지" style="width: 100%; height: auto; border-radius: 10px;" />
             <h3 style="color: rgb(21, 127, 21);">
                 MZ 세대를 대상으로 한 맞춤형 향수 추천 쇼핑몰
             </h3>
             <b style="color: #8d8d8d;">HTML</b> | <b style="color: #8d8d8d;">CSS</b> 
             | <b style="color: #8d8d8d;">JavaScript</b>
-            <p>2024년 4월 23일 ➡ 2024년 12월 20일</p>
+            <p>2024년 4월 23일 ➡ 진행 하다가 학교 휴학으로 중단</p>
             <p><b>개발 인원(역할)</b> : 3명 (2명은 백엔드 / 1명은 프론트엔드)</p>
             
+            <div class="video-container">
+                <video src="media/캡스톤.mp4" controls></video>
+            </div>
+
             <h3 style="margin-top: 30px;">
                 📖 내용
             </h3>
@@ -438,7 +493,8 @@
                 padding: 10px 20px; border-radius: 10px;"
             >
                 ▶ <b>옷 스타일에 맞는 향수 추천 테스트</b><br>
-                &nbsp;&nbsp;▪ 사용자의 옷 스타일을 선택하면 해당 스타일에 어울리는 향수를 추천<br>
+                &nbsp;&nbsp;▪ 사용자가 원하는 패션 스타일을 3가지 선택하면<br>
+                해당 스타일에 어울리는 향수를 추천<br>
                 ▶ <b>향수 MBTI 테스트</b><br>
                 &nbsp;&nbsp;▪ MBTI 성격 유형과 유사한 테스트를 통해 사용자의 성격과<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;취향을 분석, 맞춤형 향수 추천  
@@ -449,26 +505,66 @@
     <div id="modal2" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h2>졸업 작품</h2>
-            <img src="img/Untitled (2).png" alt="프로젝트 1 이미지" style="width: 100%; height: auto;" />
-            <p>MZ 세대를 대상으로 한 맞춤형 향수 추천 쇼핑몰</p>
-            <b style="color: #8d8d8d;">HTML</b> | <b style="color: #8d8d8d;">CSS</b> 
-            | <b style="color: #8d8d8d;">JavaScript</b>
-            <p>2024년 4월 23일 ➡ 2024년 12월 20일</p>
-            <p>프로젝트에 대한 상세한 설명을 여기에 입력하세요...</p>
+            <h2 style="color: rgb(97, 61, 14); text-align: center;">
+                온라인 중고 거래 사이트
+            </h2>
+            <img src="img/Untitled (5).png" alt="프로젝트 1 이미지" style="width: 100%; height: auto; border-radius: 10px;" />
+            <h3 style="color: rgb(62, 16, 16);">
+                대학교 3학년 1학기 기말고사 :<br>
+                Dynamic Web Project로 만든 중고 거래 사이트
+            </h3>
+            <b style="color: #8d8d8d;">Java</b> | <b style="color: #8d8d8d;">JSP</b> 
+            | <b style="color: #8d8d8d;">SQL</b> | <b style="color: #8d8d8d;">HTML</b>
+            | <b style="color: #8d8d8d;">CSS</b> | <b style="color: #8d8d8d;">JavaScript</b>
+            <p><b>개발 인원</b> : 혼자</p>
+
+            <div class="video-container">
+                <video src="media/프론트개인프로젝트- 실행 영상.mp4" controls muted></video>
+            </div>
+
+            <div style="border: 2px solid saddlebrown;
+                padding: 20px 20px; margin-top: 20px; border-radius: 10px;" 
+            >
+                ▫ <b>메인 페이지</b> : 최신 물품 등록, 카테고리 물품, 인기 물품, 추천 물품<br> 
+                &nbsp;&nbsp;네비게이션 바 반응형 웹 페이지로 구현<br><br>
+                ▫ <b>상세 페이지</b> : 메인 페이지에서 물품 클릭 시 이동<br><br>
+                ▫ <b>마이 페이지</b> : 상세 페이지에서 하트 클릭 시 상품 찜할 수 있음<br>
+                &nbsp;&nbsp;엑스 클릭하면 찜한 목록에서 삭제 됨<br>
+                &nbsp;&nbsp;내가 등록한 물품 목록 볼 수 있고,
+                &nbsp;&nbsp;물품 등록 페이지로 가는 링크 있음<br>
+                ▫ <b>물품 등록 페이지</b> : 상품 이미지와 글 입력 하여 등록할 수 있음<br><br>
+                ▫ <b>로그인 / 회원가입 페이지</b> : 데이터베이스 연동<br>
+                &nbsp;&nbsp;로그인이 이메일 혹은 비밀번호가 일치 하지 않을 시<br>
+                &nbsp;&nbsp;→ 에러 메시지인 “이메일 또는 비밀번호가 잘못 되었습니다..<br>
+                &nbsp;&nbsp;다시 입력해주세요..!!” 뜨면서 로그인 페이지에 머물도록 설정<br><br>
+                ▫ <b>로그아웃</b> : 네비게이션 바에 LogOut 클릭 시 로그아웃 됨<br>
+            </div>
         </div>
     </div>
 
     <div id="modal3" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h2>졸업 작품</h2>
-            <img src="img/Untitled (2).png" alt="프로젝트 1 이미지" style="width: 100%; height: auto;" />
-            <p>MZ 세대를 대상으로 한 맞춤형 향수 추천 쇼핑몰</p>
+            <h3 style="text-align: center; color: purple;">
+                나만의 포트폴리오
+            </h3>
+            <img src="img/image.png" alt="프로젝트 1 이미지" 
+                style="width: 100%; height: auto; border-radius: 10px;" 
+            />
+            <h4 style="color: plum;">
+                나를 소개하는 페이지 개발하기
+            </h4>
             <b style="color: #8d8d8d;">HTML</b> | <b style="color: #8d8d8d;">CSS</b> 
             | <b style="color: #8d8d8d;">JavaScript</b>
-            <p>2024년 4월 23일 ➡ 2024년 12월 20일</p>
-            <p>프로젝트에 대한 상세한 설명을 여기에 입력하세요...</p>
+            <p>📅 2024년 8월 9일 ~</p>
+            <p><b>개발 인원</b> : 혼자</p>
+            <p>🐱 <b>깃허브</b><br>
+                &nbsp;&nbsp;👉 <a href="https://github.com/usessss/first-commit"
+                    style="text-decoration: none; color: crimson;"
+                >
+                    https://github.com/usessss/first-commit
+                </a>
+            </p>
         </div>
     </div>
 
@@ -515,8 +611,8 @@
                 </tr>
                 <tr>
                     <td>RDBMS (관계형 데이터베이스 관리 시스템)</td>
-                    <td>Oracle</td>
                     <td></td>
+                    <td>Oracle</td>
                 </tr>
                 <tr>
                     <td>DevOps [Development & Operations]</td>
@@ -607,6 +703,53 @@
             window.addEventListener('click', (event) => {
                 if (event.target.classList.contains('modal')) {
                     event.target.style.display = 'none';
+                }
+            });
+        });
+
+        // 팝업이 열릴 때 동영상 자동 재생
+        document.addEventListener('DOMContentLoaded', () => {
+            const modalBtns = document.querySelectorAll('.open-modal');
+            const closeBtns = document.querySelectorAll('.close');
+
+            modalBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const modalId = btn.getAttribute('data-modal');
+                    const modal = document.getElementById(modalId);
+                    modal.style.display = 'block';
+
+                    // 비디오 자동 재생
+                    const video = modal.querySelector('video');
+                    if (video) {
+                        video.play();
+                    }
+                });
+            });
+
+            closeBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const modal = btn.closest('.modal');
+                    modal.style.display = 'none';
+
+                    // 비디오 정지
+                    const video = modal.querySelector('video');
+                    if (video) {
+                        video.pause();
+                        video.currentTime = 0; // 비디오 시간 초기화
+                    }
+                });
+            });
+
+            window.addEventListener('click', (event) => {
+                if (event.target.classList.contains('modal')) {
+                    event.target.style.display = 'none';
+
+                    // 비디오 정지
+                    const video = event.target.querySelector('video');
+                    if (video) {
+                        video.pause();
+                        video.currentTime = 0;
+                    }
                 }
             });
         });
