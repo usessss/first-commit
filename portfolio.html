@@ -3,309 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>포트폴리오</title>
-    
-    <style>
-        /* 일반 스타일 */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-            box-sizing: border-box; /* 전체 요소의 패딩과 테두리를 포함하여 너비 및 높이 계산 */
-        }
-
-        header {
-            background-image: url("https://www.notion.so/image/https%3A%2F%2Fwww.koreaitacademy.com%2Fm%2Fimg%2Fcurriculum%2Fweb01.jpg?table=block&id=fd18bbae-9f8f-45fa-9958-3afe4ae5a740&spaceId=053dc54c-cdd9-4b00-8c02-a68aaa3526cd&width=1610&userId=ed61468e-bbb9-4b3e-a789-4933aa43a226&cache=v2");
-            background-size: cover;
-            background-position: center;
-            color: #fff;
-            padding: 60px 20px;
-            text-align: center;
-            position: relative;
-            box-sizing: border-box; /* 패딩 및 테두리를 포함하여 너비 계산 */
-        }
-
-        header::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 1;
-        }
-
-        header h1, header nav ul {
-            position: relative;
-            z-index: 2;
-        }
-
-        header nav ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            text-align: center;
-        }
-
-        header nav ul li {
-            display: inline;
-            margin: 0 15px;
-        }
-
-        header nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-            padding: 10px 15px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        header nav ul li a:hover {
-            background-color: rgba(255, 255, 255, 0.7);
-            color: #333;
-        }
-
-        /* 소개 섹션 */
-        .about {
-            padding: 20px;
-            margin: 20px auto;
-            max-width: 800px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            box-sizing: border-box; /* 패딩 및 테두리를 포함하여 너비 계산 */
-        }
-
-        .about h2 {
-            text-align: center;
-            color: #333;
-        }
-
-        .about-content {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .about-content img {
-            border-radius: 40px;
-            width: 250px;
-            height: auto;
-        }
-
-        .about-text {
-            font-size: 18px;
-            line-height: 1.5;
-        }
-
-        /* 푸터 */
-        .footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #333;
-            color: #fff;
-            box-sizing: border-box; /* 패딩 및 테두리를 포함하여 너비 계산 */
-        }
-
-        .about > ul > li > b {
-            color: orange;
-        }
-
-        h1 {
-            border: 2px solid white; /* 흰색 테두리 설정 */
-            padding: 20px; /* 테두리와 내용 사이에 여백 추가 */
-            background-color: #8d8d8d; /* 텍스트 가독성을 위한 배경색 설정 */
-            color: white; /* 텍스트 색상 설정 */
-            text-align: center; /* 텍스트 중앙 정렬 */
-            margin: 50px; /* 상하좌우 여백 추가 */
-        }
-
-        /* 캐러셀 섹션 스타일 */
-        .projects {
-            position: relative;
-            padding: 20px;
-            margin: 20px auto;
-            max-width: 800px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            box-sizing: border-box; /* 패딩 및 테두리를 포함하여 너비 계산 */
-        }
-
-        .carousel {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .carousel-wrapper {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-        }
-
-        .carousel-item {
-            min-width: 100%;
-            box-sizing: border-box;
-            padding: 20px;
-            background-color: #f4f4f4;
-            border-radius: 8px;
-            text-align: center;
-        }
-
-        .carousel-item h3 {
-            margin: 0;
-            padding-bottom: 10px;
-        }
-
-        .carousel-item p {
-            margin: 0;
-        }
-
-        .carousel-item > button:hover {
-            background-color: #555; /* 조금 더 어두운 회색으로 변경 */
-            color: #fff; /* 텍스트 색상을 흰색으로 변경 */
-            border: 1px solid #fff; /* 흰색 테두리 추가 */
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* 부드러운 그림자 추가 */
-            transform: scale(1.05); /* 마우스 호버 시 버튼이 약간 커지도록 */
-            transition: all 0.3s ease; /* 부드러운 트랜지션 효과 */
-        }
-
-        .carousel-control {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
-            color: #fff;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            z-index: 2;
-            font-size: 24px;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .carousel-control.prev {
-            left: 10px;
-        }
-
-        .carousel-control.next {
-            right: 10px;
-        }
-
-        /* 이동 애니메이션 */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* 도구 섹션 스타일 */
-        .section {
-            width: 100%;
-            overflow-x: auto; /* 테이블이 너무 넓을 때 수평 스크롤 추가 */
-            padding: 0; /* 여백 제거 */
-            margin: 0; /* 여백 제거 */
-            box-sizing: border-box; /* 패딩 및 테두리를 포함하여 너비 계산 */
-        }
-
-        /* 테이블 스타일 */
-        .tool {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-            min-width: 600px; /* 테이블이 너무 좁아지지 않도록 최소 너비 설정 */
-            box-sizing: border-box; /* 패딩 및 테두리를 포함하여 너비 계산 */
-        }
-
-        .tool th, .tool td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-            box-sizing: border-box; /* 패딩 및 테두리를 포함하여 너비 계산 */
-        }
-
-        .tool th {
-            background-color: #f4f4f4;
-        }
-
-        .tool td {
-            background-color: #fff;
-        }
-
-        .tool tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-
-        /* 모달 스타일 */
-        .modal {
-            display: none; /* 기본적으로 숨김 */
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.5); /* 어두운 배경색 */
-        }
-
-        .modal-content {
-            background-color: #fefefe;
-            margin: 15% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%; /* 모달 창의 너비 조정 */
-            max-width: 600px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        .video-container {
-            max-width: 100%;
-            width: 500px;
-            padding: 10px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            transition: box-shadow 0.3s ease;
-        }
-
-        .video-container:hover {
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-        }
-
-        video {
-            width: 100%;
-            border-radius: 10px;
-        }
-    </style>
+    <title>나의 포트폴리오</title>
+    <link rel="stylesheet" type="text/css" href="portfolio.css">
 </head>
 
 <body>
@@ -332,11 +31,11 @@
             <div class="about-text">
                 <span>
                     안녕하세요 👋<br>
-                    프론트엔드로 세상을 바꾸고 싶은,<br>
-                    프론트엔드 개발자 송지민 입니다 ‼<br><br>
+                    퍼블리싱으로 세상을 바꾸고 싶은,<br>
+                    퍼블리셔 개발자 송지민입니다 ‼<br><br>
 
                     🎂 Birth : <i style="color: rgb(147, 147, 147);">2000.11.24</i><br>
-                    ✉️ E-Mail : ellie1364@naver.com<br>
+                    ✉️ E-Mail : <i style="color: rgb(147, 147, 147);">ellie1364@naver.com</i><br>
                     🐱 Github :<br>
                     &nbsp; &nbsp;👉
                         <a href="https://github.com/usessss" 
@@ -349,41 +48,40 @@
         </div>
 
         <ul style="margin-top: 30px;">
-            <li>💻 <b>쉽게 코딩하는 프론트엔드 개발자</b>가 될 거예요.</li>
-            <li>🌍 <b>사용자의 입장을 생각</b>하며 개발 과정에 임합니다.</li>
+            <li>💻 <b>쉽게 코딩하는 퍼블리셔 개발자</b>가 될 거예요.</li>
+            <li>🌍 <b>사용자의 입장을 생각</b>하며 개발 과정에 임할거예요.</li>
             <li>📚 <b>꾸준하게 공부</b>하며 항상 성장하려고 노력해요.</li>
-            <li>🌱 현재 <b>HTML</b> & <b>CSS</b> & <b>JAVASCRIPT</b>와 <b>React</b>를 배우고 있습니다 📚</li>
+            <li>🌱 현재 <b>HTML</b> & <b>CSS</b> & <b>JAVASCRIPT</b>와 <b>React</b>를 공부하고 있습니다.</li>
         </ul>
     </section>
 
     <!-- 프로젝트 섹션 -->
-    <section id="projects" class="projects">
+    <section id="projects" class="projects fade-in">
         <h2>📝 프로젝트</h2>
 
         <div class="carousel">
             <button class="carousel-control prev" aria-label="Previous slide">&#10094;</button>
 
             <div class="carousel-wrapper">
-                <div class="carousel-item">
+                <div class="carousel-item fade-in">
                     <h3 style="color: darkgreen;">
-                        졸업 작품
+                        대학교 캡스톤 졸업 작품
                     </h3>
-                    <img src="img/Untitled (2).png" alt="프로젝트 1 이미지" 
-                        style="border-radius: 10px;"
+                    <img src="img/졸작.png" alt="프로젝트 1 이미지" 
+                        style="border-radius: 10px; width: 100%;"
                     />
                     <h4 style="color: rgb(21, 127, 21);">
                         MZ 세대를 대상으로 한 맞춤형 향수 추천 쇼핑몰
                     </h4>
-                    <b style="color: #8d8d8d;">HTML</b> | <b style="color: #8d8d8d;">CSS</b> 
-                    | <b style="color: #8d8d8d;">JavaScript</b>
+                    <div style="display: flex; gap: 4px;">
+                        <b style="color: #8d8d8d;">HTML</b> | <b style="color: #8d8d8d;">CSS</b> 
+                        | <b style="color: #8d8d8d;">JavaScript</b>
+                    </div>
                     <p style="margin-top: 10px;">
-                        📅 2024년 4월 23일 ~
+                        📅 2024년 4월 23일 ~ (휴학으로 End)
                     </p>
                     
-                    <button class="open-modal" data-modal="modal1"
-                        style="margin-top: 20px; border-radius: 50%;
-                        padding: 10px 20px;"
-                    >
+                    <button class="open-modal" data-modal="modal1">
                         상세 보기
                     </button>
                 </div>
@@ -393,8 +91,10 @@
                     <h3 style="color: rgb(97, 61, 14);">
                         온라인 중고 거래 사이트
                     </h3>
-                    <img src="img/Untitled (5).png" alt="프로젝트 2 이미지" 
-                        style="width: 500px; border-radius: 10px;"
+                    <img 
+                        src="img/기말고사.png" 
+                        alt="기말고사 프로젝트" title="기말고사 프로젝트 이미지" 
+                        style="border-radius: 10px; width: 100%;"
                     />
                     <h4 style="color: rgb(71, 46, 46);">
                         Dynamic Web Project로 만든 중고 거래 사이트
@@ -408,10 +108,7 @@
                         📅 3학년 1학기 기말고사 개인 프로젝트
                     </p>
 
-                    <button class="open-modal" data-modal="modal2"
-                        style="margin-top: 20px; border-radius: 50%;
-                        padding: 10px 20px;"
-                    >
+                    <button class="open-modal" data-modal="modal2">
                         상세 보기
                     </button>
                 </div>
@@ -423,17 +120,41 @@
                     <img src="img/image.png" alt="프로젝트 3 이미지" 
                         style="border-radius: 10px; width: 100%;"
                     />
-                    <h4 style="color: plum;">
+                    <h4 style="color: purple;">
                         나를 소개하는 페이지 개발하기
                     </h4>
-                    <b style="color: #8d8d8d;">HTML</b> | <b style="color: #8d8d8d;">CSS</b> 
-                    | <b style="color: #8d8d8d;">JavaScript</b>
+                    <div>
+                        <b style="color: #8d8d8d;">HTML</b> | <b style="color: #8d8d8d;">CSS</b> 
+                        | <b style="color: #8d8d8d;">JavaScript</b>
+                    </div>
+                    <br />
                     <p>📅 2024년 8월 9일</p>
                     
-                    <button class="open-modal" data-modal="modal3"
-                        style="margin-top: 20px; border-radius: 50%;
-                        padding: 10px 20px;"
-                    >
+                    <button class="open-modal" data-modal="modal3">
+                        상세 보기
+                    </button>
+                </div>
+
+                <div class="carousel-item">
+                    <h3 style="color: rgb(31, 144, 189);">
+                        🔊대규모 핀테크 사일런트 컨퍼런스 - 8+1 BiT🎧
+                    </h3>
+                    <img src="img/메인페이지.PNG" alt="메인페이지" 
+                        style="border-radius: 10px; width: 100%;"
+                    />
+                    <h4 style="color: rgb(31, 144, 189);">
+                        부트캠프에서 4개의 직무와 함께 프로젝트🎶
+                    </h4>
+                    <div style="display: flex; gap: 4px;">
+                        <b style="color: #8d8d8d;">React</b> | <b style="color: #8d8d8d;">Redex</b> 
+                        | <b style="color: #8d8d8d;">Vite</b> | <b style="color: #8d8d8d;">TailwindCss</b>
+                    </div>
+                    
+                    <br />
+
+                    <p>📅 2025년 2월 24일 ~ 3월 31일</p>
+                    
+                    <button class="open-modal" data-modal="modal4">
                         상세 보기
                     </button>
                 </div>
@@ -447,27 +168,33 @@
     <div id="modal1" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h2 style="color: darkgreen; text-align: center;">
+            <h3 style="color: darkgreen; text-align: center;">
                 졸업 작품
-            </h2>
-            <img src="img/Untitled (2).png" alt="프로젝트 1 이미지" style="width: 100%; height: auto; border-radius: 10px;" />
-            <h3 style="color: rgb(21, 127, 21);">
-                MZ 세대를 대상으로 한 맞춤형 향수 추천 쇼핑몰
             </h3>
-            <b style="color: #8d8d8d;">HTML</b> | <b style="color: #8d8d8d;">CSS</b> 
-            | <b style="color: #8d8d8d;">JavaScript</b>
-            <p>2024년 4월 23일 ➡ 진행 하다가 학교 휴학으로 중단</p>
-            <p><b>개발 인원(역할)</b> : 3명 (2명은 백엔드 / 1명은 프론트엔드)</p>
+            <img 
+                src="img/졸작.png" alt="졸업작품 이미지" title="졸업작품 이미지" 
+                style="width: 100%; height: auto; border-radius: 10px;" 
+            />
+            <h4 style="color: rgb(21, 127, 21);">
+                MZ 세대를 대상으로 한 맞춤형 향수 추천 쇼핑몰
+            </h4>
+            <div style="display: flex; gap: 4px;">
+                <b style="color: #8d8d8d;">HTML</b> | <b style="color: #8d8d8d;">CSS</b> 
+                | <b style="color: #8d8d8d;">JavaScript</b>
+            </div>
+            <p>📅 2024년 4월 23일 ➡ 진행 하다가 학교 휴학으로 중단</p>
+            <p>👥 <b>개발 인원(역할)</b> : 총 3명 - 2명은 백엔드 | 1명은 프론트엔드( 나 )</p>
             
+            <h4>실행영상</h4>
             <div class="video-container">
                 <video src="media/캡스톤.mp4" controls></video>
             </div>
 
-            <h3 style="margin-top: 30px;">
+            <h4 style="margin-top: 30px;">
                 📖 내용
-            </h3>
+            </h4>
             <hr>
-            <h2>개요</h2>
+            <h4>개요</h4>
             <p
                 style="border: 1px solid darkgreen;
                 padding: 10px 20px; border-radius: 10px;"
@@ -477,7 +204,7 @@
                 자신의 스타일과 성격에 맞는 향수를 쉽게 찾을 수 있도록 돕는 것입니다.
             </p>
 
-            <h2>프로젝트 목표</h2>
+            <h4>프로젝트 목표</h4>
             <p
                 style="border: 1px solid darkgreen;
                 padding: 10px 20px; border-radius: 10px;"
@@ -487,7 +214,7 @@
                 ▶ MZ 세대를 타겟 으로 한 효과적인 마케팅 전략 수립   
             </p>
 
-            <h2>주요 기능</h2>
+            <h4>주요 기능</h4>
             <p
                 style="border: 1px solid darkgreen;
                 padding: 10px 20px; border-radius: 10px;"
@@ -505,19 +232,24 @@
     <div id="modal2" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h2 style="color: rgb(97, 61, 14); text-align: center;">
+            <h3 style="color: rgb(97, 61, 14); text-align: center;">
                 온라인 중고 거래 사이트
-            </h2>
-            <img src="img/Untitled (5).png" alt="프로젝트 1 이미지" style="width: 100%; height: auto; border-radius: 10px;" />
-            <h3 style="color: rgb(62, 16, 16);">
-                대학교 3학년 1학기 기말고사 :<br>
-                Dynamic Web Project로 만든 중고 거래 사이트
             </h3>
+            <img 
+                src="img/기말고사.png" 
+                alt="기말고사 프로젝트" title="기말고사 프로젝트 이미지" 
+                style="width: 100%; height: auto; border-radius: 10px;" 
+            />
+            <h4 style="color: rgb(62, 16, 16);">
+                <대학교 3학년 1학기 기말고사<br>
+                Dynamic Web Project로 만든 중고 거래 사이트>
+            </h4>
             <b style="color: #8d8d8d;">Java</b> | <b style="color: #8d8d8d;">JSP</b> 
             | <b style="color: #8d8d8d;">SQL</b> | <b style="color: #8d8d8d;">HTML</b>
             | <b style="color: #8d8d8d;">CSS</b> | <b style="color: #8d8d8d;">JavaScript</b>
-            <p><b>개발 인원</b> : 혼자</p>
+            <p>👤 <b>개발 인원</b> : 혼자</p>
 
+            <h4>실행영상</h4>
             <div class="video-container">
                 <video src="media/프론트개인프로젝트- 실행 영상.mp4" controls muted></video>
             </div>
@@ -551,18 +283,900 @@
             <img src="img/image.png" alt="프로젝트 1 이미지" 
                 style="width: 100%; height: auto; border-radius: 10px;" 
             />
-            <h4 style="color: plum;">
+            <h4 style="color: purple;">
                 나를 소개하는 페이지 개발하기
             </h4>
             <b style="color: #8d8d8d;">HTML</b> | <b style="color: #8d8d8d;">CSS</b> 
             | <b style="color: #8d8d8d;">JavaScript</b>
             <p>📅 2024년 8월 9일 ~</p>
-            <p><b>개발 인원</b> : 혼자</p>
+            <p>👤 <b>개발 인원</b> : 혼자</p>
             <p>🐱 <b>깃허브</b><br>
                 &nbsp;&nbsp;👉 <a href="https://github.com/usessss/first-commit"
                     style="text-decoration: none; color: crimson;"
                 >
                     https://github.com/usessss/first-commit
+                </a>
+            </p>
+        </div>
+    </div>
+
+    <div id="modal4" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3 style="text-align: center; color: rgb(31, 144, 189);">
+                🔊대규모 핀테크 사일런트 컨퍼런스🎧
+            </h3>
+
+            <h4 style="font-weight: bold;">
+                카카오 X 구름 Deep Dive 온라인 부트캠프<br>
+                리액트 기반 프론트엔드 개발자 취업 특화 과정 1회차<br>
+                ☁️기간 : 2024/08/19 ~ 2025/04/02
+            </h4>
+
+            <img src="img/컴퍼런스.PNG" alt="프로젝트 1 이미지" 
+                style="width: 100%; height: auto; border-radius: 10px;" 
+            />
+
+            <h4>사일런트 컴퍼런스란❓</h4>
+            <h5>
+                기존 스피커 시스템 대신 무선 헤드셋을 활용하여<br>
+                한 공간에 서 여러 개의 세션을 동시에 진행할 수 있는 혁신적인 포럼 방식❗<br>
+                👉 스피커의 강연을 오디오만 듣고 싶다면 오디오 정취로,<br>
+                영상이랑 오디오를 같이 듣고 싶다면 라이브 영상 시청으로
+            </h5>
+            <p>
+                <b>👥인원 총 9명</b> 
+                    : 프로덕트 매니지먼트[PM] 1명, 프로덕트 디자이너[PD] 2명,
+                    <br>프론트엔드[FE] 2명, 백엔드[BE] 4명
+            </p>
+            <p style="font-weight: bold;">📅 2025년 2월 24일 ~ 3월 31일</p>
+
+            <h4>
+                🛠️사용스택
+            </h4>
+            <h4>
+                PD
+            </h4>
+            <ul>
+                <li style="list-style-type: square;">Figma</li>
+            </ul>
+            <h4>
+                FE
+            </h4>
+            <ul>
+                <li style="list-style-type: square;">Core : React - js</li>
+                <li style="list-style-type: square;">Ui : tailwindCss</li>
+                <li style="list-style-type: square;">State Managing : redux</li>
+                <li style="list-style-type: square;">Bundler : React - Vite</li>
+            </ul>
+            <h4>
+                BE
+            </h4>
+            <ul>
+                <li style="list-style-type: square;">SpringBoot</li>
+                <li style="list-style-type: square;">Spring Security</li>
+                <li style="list-style-type: square;">Docker</li>
+                <li style="list-style-type: square;">OAuth2</li>
+                <li style="list-style-type: square;">JPA</li>
+                <li style="list-style-type: square;">MySQL</li>
+                <li style="list-style-type: square;">Redis</li>
+                <li style="list-style-type: square;">Swagger</li>
+                <li style="list-style-type: square;">AWS</li>
+                <li style="list-style-type: square;">WebSocket</li>
+                <li style="list-style-type: square;">Redis Pub/Sub</li>
+                <li style="list-style-type: square;">Kurento</li>
+            </ul>
+
+            <h4>
+                <a href="https://www.notion.so/1ceb05d8ba7280eaadd6e5da148a67c7?v=1ceb05d8ba7281339520000c37d66d69">
+                    📑API 명세서
+                </a>
+            </h4>
+
+            <h4>4개의 직무 팀원 역할 분담</h4>
+            <img 
+                src="img/FiT팀원소개.PNG" 
+                alt="프로젝트 맡은 역할 이미지"
+                style="width: 100%;" 
+            />
+
+            <h4>실행영상</h4>
+            <div class="video-container">
+                <video src="media/FiT.mp4" controls muted></video>
+            </div>
+
+            <h4>🤓내가 맡은 기능 정리</h4>
+            <h4>🔥네이버, 카카오, 구글 소셜 로그인 및 회원가입</h4>
+            <img src="/img/FiT로그인.png" style="width: 100%; border-radius: 10px;" title="로그인페이지" />
+            <ol>
+                <li style="font-weight: bold;">OAuth2 소셜 로그인 ( 네이버, 카카오, 구글 )</li>
+                <ul>
+                    <li>각 플랫폼의 인증 API를 활용해 로그인 버튼 생성</li>
+                    <li>사용자가 클릭 시 해당 플랫폼의 로그인 페이지로 리디렉션</li>
+                </ul>
+
+                <li style="font-weight: bold;">백엔드와 토큰 교환 🛡️</li>
+                <ul>
+                    <li>로그인 후 리디렉션되는 URL에서 Authorization Code로 백엔드와 Access Token 교환</li>
+                    <li>fetch 이용해 백엔드 API 호출( 토큰 교환 및 사용자 정보 가져오기 )</li>
+                </ul>
+
+                <li style="font-weight: bold;">사용자 상태 관리 🗂️</li>
+                <ul>
+                    <li>Redux를 사용하여 로그인 성공 시 사용자 정보와 Access Token을 상태로 저장</li>
+                    <li>localStorage를 활용해 Access Token을 브라우저에 저장</li>
+                </ul>
+            </ol>
+
+            <h5>
+                💠소셜 로그인 버튼 ( GoogleLoginButton )
+            </h5>
+            <div class="code-container">
+                <div class="code-header">
+                  <div class="code-dots">
+                    <div class="dot dot-red"></div>
+                    <div class="dot dot-yellow"></div>
+                    <div class="dot dot-green"></div>
+                  </div>
+                  <div class="code-title">google-login.jsx</div>
+                </div>
+                <pre><code>
+            <span class="token-keyword">const</span> <span class="token-function">GoogleLogin</span> <span class="token-arrow">=</span> () <span class="token-arrow">=></span> {
+              <span class="token-keyword">const</span> <span class="token-function">onGoogleLogin</span> <span class="token-arrow">=</span> () <span class="token-arrow">=></span> {
+                window.location.href <span class="token-arrow">=</span> <span class="token-string">"https://fit-conference.shop/oauth2/authorization/google"</span>;
+              };
+            
+              <span class="token-keyword">return</span> (
+                <span class="token-jsx-tag">&lt;button</span> <span class="token-attr">onClick</span>={<span class="token-function">onGoogleLogin</span>} <span class="token-attr">className</span>=<span class="token-string">"social-btn"</span><span class="token-jsx-tag">&gt;</span>
+                  <span class="token-jsx-tag">&lt;img</span> <span class="token-attr">src</span>=<span class="token-string">"/images/GoogleLogo.png"</span> <span class="token-attr">alt</span>=<span class="token-string">"Google"</span> <span class="token-jsx-tag">/&gt;</span>
+                  구글로 시작하기
+                <span class="token-jsx-tag">&lt;/button&gt;</span>
+              );
+            };</code></pre>
+            </div>
+
+            <h5>
+                💠토큰 교환 로직
+            </h5>
+            <div class="code-container">
+                <div class="code-toolbar">
+                  <div class="code-buttons">
+                    <div class="code-btn red"></div>
+                    <div class="code-btn yellow"></div>
+                    <div class="code-btn green"></div>
+                  </div>
+                  <div class="code-title2">google-login.jsx</div>
+                </div>
+                <pre><code><span class="token-keyword">useEffect</span><span class="token-punctuation">(()</span> <span class="token-operator">=></span> <span class="token-punctuation">{</span>
+              <span class="token-keyword">const</span> <span class="token-function">exchangeToken</span> <span class="token-operator">=</span> <span class="token-keyword">async</span> <span class="token-punctuation">()</span> <span class="token-operator">=></span> <span class="token-punctuation">{</span>
+                <span class="token-keyword">try</span> <span class="token-punctuation">{</span>
+                  <span class="token-keyword">const</span> response <span class="token-operator">=</span> <span class="token-keyword">await</span> <span class="token-function">fetch</span><span class="token-punctuation">(</span><span class="token-string">"https://fit-conference.shop/api/v1/auth/token-exchange"</span><span class="token-punctuation">,</span> <span class="token-punctuation">{</span>
+                    method<span class="token-operator">:</span> <span class="token-string">"POST"</span><span class="token-punctuation">,</span>
+                    headers<span class="token-operator">:</span> <span class="token-punctuation">{</span> <span class="token-string">"Content-Type"</span><span class="token-operator">:</span> <span class="token-string">"application/json"</span> <span class="token-punctuation">}</span><span class="token-punctuation">,</span>
+                    credentials<span class="token-operator">:</span> <span class="token-string">"include"</span><span class="token-punctuation">,</span>
+                  <span class="token-punctuation">}</span><span class="token-punctuation">)</span><span class="token-punctuation">;</span>
+            
+                  <span class="token-keyword">if</span> <span class="token-punctuation">(</span>response<span class="token-punctuation">.</span>ok<span class="token-punctuation">)</span> <span class="token-punctuation">{</span>
+                    <span class="token-keyword">let</span> token <span class="token-operator">=</span> response<span class="token-punctuation">.</span>headers<span class="token-punctuation">.</span><span class="token-function">get</span><span class="token-punctuation">(</span><span class="token-string">"Authorization"</span><span class="token-punctuation">)</span><span class="token-punctuation">;</span>
+                    <span class="token-keyword">if</span> <span class="token-punctuation">(</span>token<span class="token-punctuation">?</span><span class="token-punctuation">.</span><span class="token-function">startsWith</span><span class="token-punctuation">(</span><span class="token-string">"Bearer "</span><span class="token-punctuation">)</span><span class="token-punctuation">)</span> token <span class="token-operator">=</span> token<span class="token-punctuation">.</span><span class="token-function">substring</span><span class="token-punctuation">(</span><span class="token-number">7</span><span class="token-punctuation">)</span><span class="token-punctuation">;</span>
+                    localStorage<span class="token-punctuation">.</span><span class="token-function">setItem</span><span class="token-punctuation">(</span><span class="token-string">"access-token"</span><span class="token-punctuation">,</span> token<span class="token-punctuation">)</span><span class="token-punctuation">;</span>
+            
+                    <span class="token-keyword">const</span> userInfo <span class="token-operator">=</span> <span class="token-keyword">await</span> axios<span class="token-punctuation">.</span><span class="token-function">get</span><span class="token-punctuation">(</span><span class="token-string">"https://fit-conference.shop/api/v1/users/account"</span><span class="token-punctuation">,</span> <span class="token-punctuation">{</span>
+                      headers<span class="token-operator">:</span> <span class="token-punctuation">{</span> Authorization<span class="token-operator">:</span> <span class="token-string">`Bearer ${token}`</span> <span class="token-punctuation">}</span><span class="token-punctuation">,</span>
+                    <span class="token-punctuation">}</span><span class="token-punctuation">)</span><span class="token-punctuation">;</span>
+            
+                    <span class="token-function">dispatch</span><span class="token-punctuation">(</span><span class="token-function">loginSuccess</span><span class="token-punctuation">(</span><span class="token-punctuation">{</span> user<span class="token-operator">:</span> userInfo<span class="token-punctuation">.</span>data<span class="token-punctuation">.</span>response<span class="token-punctuation">,</span> token <span class="token-punctuation">}</span><span class="token-punctuation">)</span><span class="token-punctuation">)</span><span class="token-punctuation">;</span>
+                    <span class="token-function">navigate</span><span class="token-punctuation">(</span><span class="token-string">"/mypage"</span><span class="token-punctuation">)</span><span class="token-punctuation">;</span>
+                  <span class="token-punctuation">}</span>
+                <span class="token-punctuation">}</span> <span class="token-keyword">catch</span> <span class="token-punctuation">(</span>error<span class="token-punctuation">)</span> <span class="token-punctuation">{</span>
+                  console<span class="token-punctuation">.</span><span class="token-function">error</span><span class="token-punctuation">(</span><span class="token-string">"Token exchange failed:"</span><span class="token-punctuation">,</span> error<span class="token-punctuation">)</span><span class="token-punctuation">;</span>
+                <span class="token-punctuation">}</span>
+              <span class="token-punctuation">}</span><span class="token-punctuation">;</span>
+            
+              <span class="token-function">exchangeToken</span><span class="token-punctuation">(</span><span class="token-punctuation">)</span><span class="token-punctuation">;</span>
+            <span class="token-punctuation">}</span><span class="token-punctuation">,</span> <span class="token-punctuation">[</span><span class="token-punctuation">]</span><span class="token-punctuation">)</span><span class="token-punctuation">;</span></code></pre>
+              </div>
+
+            <h4>🔥메인페이지 연사 정보 불러오기</h4>
+            <img src="/img/메인.png" style="width: 100%; border-radius: 10px;" title="메인페이지 연사정보" />
+            <ol>
+                <li style="font-weight: bold;">API 연동</li>
+                <ul>
+                    <li>/api/v1/speaker 호출하여 세션 데이터를 요청하고 처리</li>
+                </ul>
+    
+                <li style="font-weight: bold;">데이터 정렬 및 렌더링</li>
+                <ul>
+                    <li>세션 데이터를 시간순으로 정렬한 후 UI에 표시</li>
+                    <li>각 세션별 정보( 타이틀, 태그, 연사 이미지 및 이름 등 ) 출력</li>
+                </ul>
+            </ol>
+
+            <h5>
+                💠API 요청 및 데이터 정렬
+            </h5>
+            <div class="code-container">
+                <div class="code-header">
+                  <div class="code-dots">
+                    <div class="dot dot-red"></div>
+                    <div class="dot dot-yellow"></div>
+                    <div class="dot dot-green"></div>
+                  </div>
+                  <div class="code-title">main-page.jsx</div>
+                </div>
+                <pre style="padding-top: 10px;"><code><span class="token-keyword">useEffect</span><span class="token-punctuation">(()</span> <span class="token-operator">=></span> <span class="token-punctuation">{</span>
+              <span class="token-keyword">const</span> <span class="token-function">fetchData</span> <span class="token-operator">=</span> <span class="token-keyword">async</span> <span class="token-punctuation">()</span> <span class="token-operator">=></span> <span class="token-punctuation">{</span>
+                <span class="token-keyword">try</span> <span class="token-punctuation">{</span>
+                  <span class="token-keyword">const</span> response <span class="token-operator">=</span> <span class="token-keyword">await</span> axios<span class="token-punctuation">.</span><span class="token-function">get</span><span class="token-punctuation">(</span><span class="token-string">'/api/v1/speaker'</span><span class="token-punctuation">)</span><span class="token-punctuation">;</span>
+                  <span class="token-keyword">if</span> <span class="token-punctuation">(</span>response<span class="token-punctuation">.</span>data<span class="token-punctuation">.</span>success<span class="token-punctuation">)</span> <span class="token-punctuation">{</span>
+                    <span class="token-keyword">const</span> sortedSessions <span class="token-operator">=</span> response<span class="token-punctuation">.</span>data<span class="token-punctuation">.</span>response<span class="token-punctuation">.</span><span class="token-function">sort</span><span class="token-punctuation">((</span>a<span class="token-punctuation">,</span> b<span class="token-punctuation">)</span> <span class="token-operator">=></span>
+                      a<span class="token-punctuation">.</span>startTime<span class="token-punctuation">.</span><span class="token-function">localeCompare</span><span class="token-punctuation">(</span>b<span class="token-punctuation">.</span>startTime<span class="token-punctuation">)</span>
+                    <span class="token-punctuation">)</span><span class="token-punctuation">;</span>
+                    <span class="token-function">setSessions</span><span class="token-punctuation">(</span>sortedSessions<span class="token-punctuation">)</span><span class="token-punctuation">;</span>
+                  <span class="token-punctuation">}</span> <span class="token-keyword">else</span> <span class="token-punctuation">{</span>
+                    console<span class="token-punctuation">.</span><span class="token-function">error</span><span class="token-punctuation">(</span><span class="token-string">'API 요청 실패:'</span><span class="token-punctuation">,</span> response<span class="token-punctuation">.</span>data<span class="token-punctuation">.</span>message<span class="token-punctuation">)</span><span class="token-punctuation">;</span>
+                  <span class="token-punctuation">}</span>
+                <span class="token-punctuation">}</span> <span class="token-keyword">catch</span> <span class="token-punctuation">(</span>error<span class="token-punctuation">)</span> <span class="token-punctuation">{</span>
+                  console<span class="token-punctuation">.</span><span class="token-function">error</span><span class="token-punctuation">(</span><span class="token-string">'API 요청 중 오류 발생:'</span><span class="token-punctuation">,</span> error<span class="token-punctuation">)</span><span class="token-punctuation">;</span>
+                <span class="token-punctuation">}</span>
+              <span class="token-punctuation">}</span><span class="token-punctuation">;</span>
+              <span class="token-function">fetchData</span><span class="token-punctuation">(</span><span class="token-punctuation">)</span><span class="token-punctuation">;</span>
+            <span class="token-punctuation">}</span><span class="token-punctuation">,</span> <span class="token-punctuation">[</span><span class="token-punctuation">]</span><span class="token-punctuation">)</span><span class="token-punctuation">;</span></code></pre>
+              </div>
+
+            <h5>
+                💠세션 데이터 렌더링
+            </h5>
+            <div class="code-container">
+                <div class="code-header">
+                  <div class="code-dots">
+                    <div class="dot dot-red"></div>
+                    <div class="dot dot-yellow"></div>
+                    <div class="dot dot-green"></div>
+                  </div>
+                  <div class="code-title">SessionList.jsx</div>
+                </div>
+                <pre style="padding-top: 10px;"><code><span class="token-punctuation">{</span>sessions<span class="token-punctuation">.</span><span class="token-function">map</span><span class="token-punctuation">((</span>session<span class="token-punctuation">,</span> index<span class="token-punctuation">)</span> <span class="token-operator">=></span> <span class="token-punctuation">(</span>
+              <span class="token-jsx-tag">&lt;div</span> <span class="token-jsx-attr">key</span><span class="token-operator">=</span><span class="token-punctuation">{</span>index<span class="token-punctuation">}</span> <span class="token-jsx-attr">className</span><span class="token-operator">=</span><span class="token-string">"session-card"</span><span class="token-jsx-tag">&gt;</span>
+                <span class="token-jsx-tag">&lt;h3&gt;</span><span class="token-punctuation">{</span>session<span class="token-punctuation">.</span>title<span class="token-punctuation">}</span><span class="token-jsx-tag">&lt;/h3&gt;</span>
+                <span class="token-jsx-tag">&lt;div</span> <span class="token-jsx-attr">className</span><span class="token-operator">=</span><span class="token-string">"tags"</span><span class="token-jsx-tag">&gt;</span>
+                  <span class="token-punctuation">{</span>session<span class="token-punctuation">.</span>tags<span class="token-punctuation">.</span><span class="token-function">map</span><span class="token-punctuation">((</span>tag<span class="token-punctuation">,</span> i<span class="token-punctuation">)</span> <span class="token-operator">=></span> <span class="token-punctuation">(</span>
+                    <span class="token-jsx-tag">&lt;span</span> <span class="token-jsx-attr">key</span><span class="token-operator">=</span><span class="token-punctuation">{</span>i<span class="token-punctuation">}</span> <span class="token-jsx-attr">className</span><span class="token-operator">=</span><span class="token-string">"tag"</span><span class="token-jsx-tag">&gt;</span><span class="token-punctuation">{</span>tag<span class="token-punctuation">}</span><span class="token-jsx-tag">&lt;/span&gt;</span>
+                  <span class="token-punctuation">)</span><span class="token-punctuation">)</span><span class="token-punctuation">}</span>
+                <span class="token-jsx-tag">&lt;/div&gt;</span>
+                <span class="token-jsx-tag">&lt;div</span> <span class="token-jsx-attr">className</span><span class="token-operator">=</span><span class="token-string">"speaker-info"</span><span class="token-jsx-tag">&gt;</span>
+                  <span class="token-jsx-tag">&lt;img</span> <span class="token-jsx-attr">src</span><span class="token-operator">=</span><span class="token-punctuation">{</span>session<span class="token-punctuation">.</span>speaker<span class="token-punctuation">.</span>image<span class="token-punctuation">}</span> <span class="token-jsx-attr">alt</span><span class="token-operator">=</span><span class="token-string">"연사 이미지"</span> <span class="token-jsx-tag">/&gt;</span>
+                  <span class="token-jsx-tag">&lt;p&gt;</span><span class="token-punctuation">{</span>session<span class="token-punctuation">.</span>speaker<span class="token-punctuation">.</span>name<span class="token-punctuation">}</span> <span class="token-punctuation">(</span><span class="token-punctuation">{</span>session<span class="token-punctuation">.</span>speaker<span class="token-punctuation">.</span>description<span class="token-punctuation">}</span><span class="token-punctuation">)</span><span class="token-jsx-tag">&lt;/p&gt;</span>
+                <span class="token-jsx-tag">&lt;/div&gt;</span>
+              <span class="token-jsx-tag">&lt;/div&gt;</span>
+            <span class="token-punctuation">)</span><span class="token-punctuation">)</span><span class="token-punctuation">}</span></code></pre>
+              </div>
+
+            <h5>✅ 세션 카드 출력: 타이틀, 태그, 연사 이미지, 연사 이름 및 설명 출력</h5>
+
+            <h4>🔥마이페이지 로그인(구글/네이버/카카오)한 유저의 프로필, 이름, 이메일 정보 불러오기</h4>
+            <img 
+                src="/img/마이페이지프로필.PNG" 
+                style="width: 100%; border-radius: 10px;" 
+                title="마이페이지 유저정보" 
+            />
+            <ol>
+                <li style="font-weight: bold;">
+                    로그인한 유저 정보 불러오기
+                </li>
+                <ul>
+                    <li>
+                        플랫폼별 로그인 (카카오, 네이버, 구글) 완료 후
+                        /api/v1/users/account API를 호출하여 유저의 이름, 이메일, 프로필 이미지를 화면에 표시
+                    </li>
+                </ul>
+
+                <div class="code-container">
+                    <div class="code-header">
+                      <div class="code-dots">
+                        <div class="dot dot-red"></div>
+                        <div class="dot dot-yellow"></div>
+                        <div class="dot dot-green"></div>
+                      </div>
+                      <div class="code-title">mypage.jsx</div>
+                    </div>
+                    <pre style="padding-top: 10px;"><code><span class="token-keyword">const</span> <span class="token-function">fetchUserProfile</span> <span class="token-operator">=</span> <span class="token-keyword">async</span> <span class="token-punctuation">()</span> <span class="token-operator">=></span> <span class="token-punctuation">{</span>
+                  <span class="token-keyword">try</span> <span class="token-punctuation">{</span>
+                    <span class="token-keyword">const</span> accessToken <span class="token-operator">=</span> localStorage<span class="token-punctuation">.</span><span class="token-function">getItem</span><span class="token-punctuation">(</span><span class="token-string">"access-token"</span><span class="token-punctuation">)</span><span class="token-punctuation">;</span>
+                    <span class="token-keyword">if</span> <span class="token-punctuation">(</span><span class="token-operator">!</span>accessToken<span class="token-punctuation">)</span> <span class="token-keyword">return</span> <span class="token-function">navigate</span><span class="token-punctuation">(</span><span class="token-string">'/login'</span><span class="token-punctuation">)</span><span class="token-punctuation">;</span>
+                
+                    <span class="token-keyword">const</span> response <span class="token-operator">=</span> <span class="token-keyword">await</span> axios<span class="token-punctuation">.</span><span class="token-function">get</span><span class="token-punctuation">(</span><span class="token-string">"https://fit-conference.shop/api/v1/users/account"</span><span class="token-punctuation">,</span> <span class="token-punctuation">{</span>
+                      headers<span class="token-operator">:</span> <span class="token-punctuation">{</span> Authorization<span class="token-operator">:</span> <span class="token-string">`Bearer ${accessToken}`</span> <span class="token-punctuation">}</span><span class="token-punctuation">,</span>
+                    <span class="token-punctuation">}</span><span class="token-punctuation">)</span><span class="token-punctuation">;</span>
+                
+                    <span class="token-keyword">if</span> <span class="token-punctuation">(</span>response<span class="token-punctuation">.</span>data<span class="token-punctuation">.</span>success<span class="token-punctuation">)</span> <span class="token-punctuation">{</span>
+                      <span class="token-function">dispatch</span><span class="token-punctuation">(</span><span class="token-function">loginSuccess</span><span class="token-punctuation">(</span><span class="token-punctuation">{</span> 
+                        user<span class="token-operator">:</span> response<span class="token-punctuation">.</span>data<span class="token-punctuation">.</span>response<span class="token-punctuation">,</span> 
+                        token<span class="token-operator">:</span> accessToken 
+                      <span class="token-punctuation">}</span><span class="token-punctuation">)</span><span class="token-punctuation">)</span><span class="token-punctuation">;</span>
+                    <span class="token-punctuation">}</span> <span class="token-keyword">else</span> <span class="token-punctuation">{</span>
+                      localStorage<span class="token-punctuation">.</span><span class="token-function">removeItem</span><span class="token-punctuation">(</span><span class="token-string">"access-token"</span><span class="token-punctuation">)</span><span class="token-punctuation">;</span>
+                      <span class="token-function">dispatch</span><span class="token-punctuation">(</span><span class="token-function">logout</span><span class="token-punctuation">(</span><span class="token-punctuation">)</span><span class="token-punctuation">)</span><span class="token-punctuation">;</span>
+                      <span class="token-function">navigate</span><span class="token-punctuation">(</span><span class="token-string">"/login"</span><span class="token-punctuation">)</span><span class="token-punctuation">;</span>
+                    <span class="token-punctuation">}</span>
+                  <span class="token-punctuation">}</span> <span class="token-keyword">catch</span> <span class="token-punctuation">(</span>error<span class="token-punctuation">)</span> <span class="token-punctuation">{</span>
+                    console<span class="token-punctuation">.</span><span class="token-function">error</span><span class="token-punctuation">(</span><span class="token-string">"API Error:"</span><span class="token-punctuation">,</span> error<span class="token-punctuation">)</span><span class="token-punctuation">;</span>
+                    <span class="token-function">navigate</span><span class="token-punctuation">(</span><span class="token-string">"/login"</span><span class="token-punctuation">)</span><span class="token-punctuation">;</span>
+                  <span class="token-punctuation">}</span>
+                <span class="token-punctuation">}</span><span class="token-punctuation">;</span></code></pre>
+                  </div>
+
+                <br />
+    
+                <li style="font-weight: bold;">로그아웃</li>
+                <ul>
+                    <li>
+                        <b>Access Token 삭제</b> : 
+                        localStorage에서 저장된 access-token을 제거하여
+                        사용자 인증 정보를 초기화
+                    </li>
+                    <li>
+                        <b>Redex 상태 관리</b> : 
+                        dispatch(logout()) 호출하여 Redux 스토어에서 사용자 상태를 초기화
+                    </li>
+                    <li>
+                        <b>페이지 이동</b> : 
+                        로그아웃 후 navigate("/login")을 통해 로그인 페이지로 이동 처리
+                    </li>
+                </ul>
+
+                <div class="code-container">
+                    <div class="code-header">
+                      <div class="code-dots">
+                        <div class="dot dot-red"></div>
+                        <div class="dot dot-yellow"></div>
+                        <div class="dot dot-green"></div>
+                      </div>
+                      <div class="code-title">mypage.jsx</div>
+                    </div>
+                    <pre style="padding-top: 10px;"><code><span class="token-keyword">const</span> <span class="token-function">handleLogout</span> <span class="token-operator">=</span> <span class="token-punctuation">()</span> <span class="token-operator">=></span> <span class="token-punctuation">{</span>
+                  <span class="token-comment">// 1. 저장된 access-token 제거</span>
+                  localStorage<span class="token-punctuation">.</span><span class="token-function">removeItem</span><span class="token-punctuation">(</span><span class="token-string">"access-token"</span><span class="token-punctuation">)</span><span class="token-punctuation">;</span>
+                
+                  <span class="token-comment">// 2. Redux에서 사용자 상태 초기화</span>
+                  <span class="token-function">dispatch</span><span class="token-punctuation">(</span><span class="token-function">logout</span><span class="token-punctuation">(</span><span class="token-punctuation">)</span><span class="token-punctuation">)</span><span class="token-punctuation">;</span>
+                
+                  <span class="token-comment">// 3. 로그인 페이지로 이동</span>
+                  <span class="token-function">navigate</span><span class="token-punctuation">(</span><span class="token-string">"/login"</span><span class="token-punctuation">)</span><span class="token-punctuation">;</span>
+                <span class="token-punctuation">}</span><span class="token-punctuation">;</span>
+                
+                <span class="token-comment">// 로그아웃 버튼 UI</span>
+                <span class="token-punctuation">{</span>user <span class="token-operator">&&</span> <span class="token-punctuation">(</span>
+                  <span class="token-jsx-tag">&lt;button</span>
+                    <span class="token-jsx-attr">onClick</span><span class="token-operator">=</span><span class="token-punctuation">{</span>handleLogout<span class="token-punctuation">}</span>
+                    <span class="token-jsx-attr">className</span><span class="token-operator">=</span><span class="token-string">"bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition whitespace-nowrap"</span>
+                  <span class="token-jsx-tag">&gt;</span>
+                    로그아웃
+                  <span class="token-jsx-tag">&lt;/button&gt;</span>
+                <span class="token-punctuation">)</span><span class="token-punctuation">}</span></code></pre>
+                  </div>
+            </ol>
+
+            <h4>🔥직무, 연차, 관심 분야(3개 태그 선택)를 Redux 활용하여 상태 관리 및 데이터 가져오기</h4>
+            <img 
+                src="/img/직무연차태그.PNG" 
+                style="width: 100%; border-radius: 10px;" 
+                title="마이페이지 유저정보" 
+            />
+            <li style="font-weight: bold;">
+                직무와 연차 데이터
+            </li>
+            <ul>
+                <li>
+                    사용자가 프로필 수정 시 선택한 직무와 연차 데이터를 리덕스 상태로 관리
+                </li>
+                <li>
+                    useSelector 사용하여 리덕스 스토어에서 해당 데이터를 가져와 화면에 반영
+                </li>
+            </ul>
+            <li style="font-weight: bold;">
+               관심 분야( 태그 3개 선택 )
+            </li>
+            <ul>
+                <li>
+                    프로필 수정 화면에서 사용자가 태그 3개 선택하도록 구현
+                </li>
+                <li>
+                    선택된 태그를 리덕스 상태에 저장한 뒤 화면에 동적으로 반영
+                </li>
+            </ul>
+            <div class="code-container">
+            <div class="code-header">
+                <div class="code-dots">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+                </div>
+                <div class="code-title">auth-slice.js</div>
+            </div>
+            <pre style="padding-top: 10px;"><code><span class="token-keyword">const</span> initialState <span class="token-operator">=</span> <span class="token-punctuation">{</span>
+            job<span class="token-operator">:</span> <span class="token-keyword">null</span><span class="token-punctuation">,</span>
+            experience<span class="token-operator">:</span> <span class="token-keyword">null</span><span class="token-punctuation">,</span>
+            interests<span class="token-operator">:</span> <span class="token-punctuation">[</span><span class="token-punctuation">]</span><span class="token-punctuation">,</span>
+            <span class="token-punctuation">}</span><span class="token-punctuation">;</span>
+            
+            <span class="token-keyword">const</span> authSlice <span class="token-operator">=</span> <span class="token-function">createSlice</span><span class="token-punctuation">(</span><span class="token-punctuation">{</span>
+            name<span class="token-operator">:</span> <span class="token-string">'auth'</span><span class="token-punctuation">,</span>
+            initialState<span class="token-operator">:</span> initialState<span class="token-punctuation">,</span>
+            reducers<span class="token-operator">:</span> <span class="token-punctuation">{</span>
+                <span class="token-function">updateProfile</span><span class="token-punctuation">(</span>state<span class="token-punctuation">,</span> action<span class="token-punctuation">)</span> <span class="token-punctuation">{</span>
+                state<span class="token-punctuation">.</span>name <span class="token-operator">=</span> action<span class="token-punctuation">.</span>payload<span class="token-punctuation">.</span>name<span class="token-punctuation">;</span>
+                state<span class="token-punctuation">.</span>job <span class="token-operator">=</span> action<span class="token-punctuation">.</span>payload<span class="token-punctuation">.</span>job<span class="token-punctuation">;</span>
+                state<span class="token-punctuation">.</span>experience <span class="token-operator">=</span> action<span class="token-punctuation">.</span>payload<span class="token-punctuation">.</span>experience<span class="token-punctuation">;</span>
+                state<span class="token-punctuation">.</span>interests <span class="token-operator">=</span> action<span class="token-punctuation">.</span>payload<span class="token-punctuation">.</span>interests<span class="token-punctuation">;</span>
+                <span class="token-punctuation">}</span><span class="token-punctuation">,</span>
+            <span class="token-punctuation">}</span><span class="token-punctuation">,</span>
+            <span class="token-punctuation">}</span><span class="token-punctuation">)</span><span class="token-punctuation">;</span>
+            
+            <span class="token-keyword">export</span> <span class="token-keyword">const</span> <span class="token-punctuation">{</span>
+            updateProfile<span class="token-punctuation">,</span>
+            <span class="token-punctuation">}</span> <span class="token-operator">=</span> authSlice<span class="token-punctuation">.</span>actions<span class="token-punctuation">;</span>
+            
+            <span class="token-keyword">export</span> <span class="token-keyword">default</span> authSlice<span class="token-punctuation">.</span>reducer<span class="token-punctuation">;</span></code></pre>
+            </div>
+
+            <br />
+
+            <div class="code-container">
+            <div class="code-header">
+                <div class="code-dots">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+                </div>
+                <div class="code-title">mypage.jsx</div>
+            </div>
+            <pre style="padding-top: 10px;"><code><span class="token-keyword">const</span> name <span class="token-operator">=</span> <span class="token-function">useSelector</span><span class="token-punctuation">((</span>state<span class="token-punctuation">)</span> <span class="token-operator">=></span> state<span class="token-punctuation">.</span>auth<span class="token-punctuation">.</span>name<span class="token-punctuation">)</span><span class="token-punctuation">;</span>
+            <span class="token-keyword">const</span> job <span class="token-operator">=</span> <span class="token-function">useSelector</span><span class="token-punctuation">((</span>state<span class="token-punctuation">)</span> <span class="token-operator">=></span> state<span class="token-punctuation">.</span>auth<span class="token-punctuation">.</span>job<span class="token-punctuation">)</span><span class="token-punctuation">;</span>
+            <span class="token-keyword">const</span> experience <span class="token-operator">=</span> <span class="token-function">useSelector</span><span class="token-punctuation">((</span>state<span class="token-punctuation">)</span> <span class="token-operator">=></span> state<span class="token-punctuation">.</span>auth<span class="token-punctuation">.</span>experience<span class="token-punctuation">)</span><span class="token-punctuation">;</span>
+            <span class="token-keyword">const</span> interests <span class="token-operator">=</span> <span class="token-function">useSelector</span><span class="token-punctuation">((</span>state<span class="token-punctuation">)</span> <span class="token-operator">=></span> state<span class="token-punctuation">.</span>auth<span class="token-punctuation">.</span>interests<span class="token-punctuation">)</span><span class="token-punctuation">;</span>
+
+            <span class="token-jsx-tag"><span class="token-punctuation">&lt;</span>div<span class="token-punctuation">&gt;</span></span>
+            <span class="token-jsx-tag"><span class="token-punctuation">&lt;</span>span<span class="token-punctuation">&gt;</span></span>직무<span class="token-jsx-tag"><span class="token-punctuation">&lt;/</span>span<span class="token-punctuation">&gt;</span></span>
+            <span class="token-jsx-tag"><span class="token-punctuation">&lt;</span>span<span class="token-punctuation">&gt;</span></span><span class="token-punctuation">{</span>job <span class="token-operator">||</span> <span class="token-string">'직무 없음'</span><span class="token-punctuation">}</span><span class="token-jsx-tag"><span class="token-punctuation">&lt;/</span>span<span class="token-punctuation">&gt;</span></span>
+            <span class="token-jsx-tag"><span class="token-punctuation">&lt;/</span>div<span class="token-punctuation">&gt;</span></span>
+            <span class="token-jsx-tag"><span class="token-punctuation">&lt;</span>div<span class="token-punctuation">&gt;</span></span>
+            <span class="token-jsx-tag"><span class="token-punctuation">&lt;</span>span<span class="token-punctuation">&gt;</span></span>연차<span class="token-jsx-tag"><span class="token-punctuation">&lt;/</span>span<span class="token-punctuation">&gt;</span></span>
+            <span class="token-jsx-tag"><span class="token-punctuation">&lt;</span>span<span class="token-punctuation">&gt;</span></span><span class="token-punctuation">{</span>experience <span class="token-operator">||</span> <span class="token-string">'연차 없음'</span><span class="token-punctuation">}</span><span class="token-jsx-tag"><span class="token-punctuation">&lt;/</span>span<span class="token-punctuation">&gt;</span></span>
+            <span class="token-jsx-tag"><span class="token-punctuation">&lt;/</span>div<span class="token-punctuation">&gt;</span></span>
+            <span class="token-jsx-tag"><span class="token-punctuation">&lt;</span>div<span class="token-punctuation">&gt;</span></span>관심 분야<span class="token-jsx-tag"><span class="token-punctuation">&lt;/</span>div<span class="token-punctuation">&gt;</span></span>
+            <span class="token-jsx-tag"><span class="token-punctuation">&lt;</span>div<span class="token-punctuation">&gt;</span></span>
+            <span class="token-punctuation">{</span>interests <span class="token-operator">&amp;&amp;</span> interests<span class="token-punctuation">.</span>length <span class="token-operator">&gt;</span> <span class="token-number">0</span> <span class="token-operator">?</span> <span class="token-punctuation">(</span>
+                interests<span class="token-punctuation">.</span><span class="token-function">map</span><span class="token-punctuation">((</span>interest<span class="token-punctuation">,</span> index<span class="token-punctuation">)</span> <span class="token-operator">=></span> <span class="token-punctuation">(</span>
+                <span class="token-jsx-tag"><span class="token-punctuation">&lt;</span>div <span class="token-attr-name">key</span><span class="token-attr-value"><span class="token-punctuation">=</span><span class="token-punctuation">{</span>index<span class="token-punctuation">}</span></span><span class="token-punctuation">&gt;</span></span>
+                    <span class="token-punctuation">{</span>interest<span class="token-punctuation">}</span>
+                <span class="token-jsx-tag"><span class="token-punctuation">&lt;/</span>div<span class="token-punctuation">&gt;</span></span>
+                <span class="token-punctuation">)</span><span class="token-punctuation">)</span>
+            <span class="token-punctuation">)</span> <span class="token-operator">:</span> <span class="token-punctuation">(</span>
+                <span class="token-jsx-tag"><span class="token-punctuation">&lt;</span>div<span class="token-punctuation">&gt;</span></span>관심 분야 없음<span class="token-jsx-tag"><span class="token-punctuation">&lt;/</span>div<span class="token-punctuation">&gt;</span></span>
+            <span class="token-punctuation">)</span><span class="token-punctuation">}</span>
+            <span class="token-jsx-tag"><span class="token-punctuation">&lt;/</span>div<span class="token-punctuation">&gt;</span></span></code></pre>
+            </div>
+
+            <h4>🔥좋아요 & 추천 강연 데이터 가져오기</h4>
+            <img 
+                src="/img/좋아요추천강연.png" 
+                style="width: 100%; border-radius: 10px;" 
+                title="마이페이지 좋아요 추천 강연" 
+            />
+            <h5 style="font-weight: bold;">
+                ❤️좋아요 표시된 강연
+            </h5>
+            <ul>
+                <li>
+                    <b>/api/v1/users/sessions/like API 호출</b> :
+                    API를 통해 사용자가 좋아요 누른 강연 정보 가져옴
+                </li>
+                <li>
+                    강연자 이미지, 이름, 제목 화면에 표시
+                </li>
+            </ul>
+            <li style="font-weight: bold;">
+                <b>최대 3개만 보여주기</b> :
+            </li>
+            <ul>
+                <li>
+                    화면에선 좋아요한 강연 중 최대 3개만 보여줌
+                </li>
+                <li>
+                    클릭 시 전체 목록 표시하는 모달창이 뜨도록 구현
+                </li>
+            </ul>
+            <h5 style="font-weight: bold;">
+                👍추천 강연
+            </h5>
+            <ul>
+                <li>
+                    <b>/api/v1/session/recommended API 호출</b> :
+                    API 호출하여 추천 강연 정보를 가져옴
+                </li>
+            </ul>
+
+            <div class="code-container">
+            <div class="code-header">
+                <div class="code-dots">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+                </div>
+                <div class="code-title">mypage.jsx</div>
+            </div>
+            <pre style="padding-top: 10px;"><code><span class="token-comment">// 좋아요한 강연 가져오기</span>
+            <span class="token-keyword">const</span> <span class="token function-variable function">fetchLikedSessions</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+            <span class="token keyword">const</span> accessToken <span class="token operator">=</span> localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">'access-token'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>accessToken<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token function">navigate</span><span class="token punctuation">(</span><span class="token string">'/login'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            
+            <span class="token keyword">try</span> <span class="token punctuation">{</span>
+                <span class="token keyword">const</span> response <span class="token operator">=</span> <span class="token keyword">await</span> axios<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'/api/v1/users/sessions/like'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+                headers<span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token function-variable function">Authorization</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Bearer </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>accessToken<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>response<span class="token punctuation">.</span>data<span class="token punctuation">.</span>success<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token function">setLikedSessions</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>data<span class="token punctuation">.</span>response<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token-comment">// 최대 3개만 표시</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">'API Error:'</span><span class="token punctuation">,</span> error<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span><span class="token punctuation">;</span>
+            
+            <span class="token-comment">// 추천 강연 가져오기</span>
+            <span class="token-keyword">const</span> <span class="token function-variable function">fetchRecommendedSessions</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+            <span class="token keyword">const</span> accessToken <span class="token operator">=</span> localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">'access-token'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>accessToken<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token function">navigate</span><span class="token punctuation">(</span><span class="token string">'/login'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            
+            <span class="token keyword">try</span> <span class="token punctuation">{</span>
+                <span class="token keyword">const</span> response <span class="token operator">=</span> <span class="token keyword">await</span> axios<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'/api/v1/session/recommended'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+                headers<span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token function-variable function">Authorization</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Bearer </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>accessToken<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>response<span class="token punctuation">.</span>data<span class="token punctuation">.</span>success<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token function">setSessions</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>data<span class="token punctuation">.</span>response<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token-comment">// 최대 3개만 표시</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">'API Error:'</span><span class="token punctuation">,</span> error<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+            </div>
+
+            <br />
+
+            <div class="code-container">
+            <div class="code-header">
+                <div class="code-dots">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+                </div>
+                <div class="code-title">mypage.jsx</div>
+            </div>
+            <pre style="padding-top: 10px;"><code><span class="token-comment">// 모달 상태 관리</span>
+            <span class="token-keyword">const</span> <span class="token punctuation">[</span>showModal<span class="token punctuation">,</span> setShowModal<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token-punctuation">(</span><span class="token boolean">false</span><span class="token-punctuation">)</span><span class="token-punctuation">;</span> <span class="token-comment">// 첫 번째 모달 (추천 강연)</span>
+            
+            <span class="token-comment">// 모달 열기 및 닫기 함수</span>
+            <span class="token-keyword">const</span> <span class="token function-variable function">openModal</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token function">setShowModal</span><span class="token-punctuation">(</span><span class="token boolean">true</span><span class="token-punctuation">)</span><span class="token-punctuation">;</span>
+            <span class="token-keyword">const</span> <span class="token function-variable function">closeModal</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token function">setShowModal</span><span class="token-punctuation">(</span><span class="token boolean">false</span><span class="token-punctuation">)</span><span class="token-punctuation">;</span>
+            
+            <span class="token-comment">// 모달창 컴포넌트</span>
+            <span class="token-keyword">const</span> <span class="token function-variable function">Modal</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> children<span class="token punctuation">,</span> onClose <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">(</span>
+            <span class="token-jsx-tag"><span class="token-punctuation">&lt;</span>div<span class="token-punctuation">&gt;</span></span>
+                <span class="token-jsx-tag"><span class="token-punctuation">&lt;</span>button <span class="token-attr-name">onClick</span><span class="token-attr-value"><span class="token-punctuation">=</span><span class="token-punctuation">{</span>onClose<span class="token-punctuation">}</span></span><span class="token-punctuation">&gt;</span></span>
+                닫기
+                <span class="token-jsx-tag"><span class="token-punctuation">&lt;/</span>button<span class="token-punctuation">&gt;</span></span>
+                <span class="token-punctuation">{</span>children<span class="token-punctuation">}</span>
+            <span class="token-jsx-tag"><span class="token-punctuation">&lt;/</span>div<span class="token-punctuation">&gt;</span></span>
+            <span class="token-punctuation">)</span><span class="token-punctuation">;</span></code></pre>
+            </div>
+
+            <br />
+
+            <h4>🔥나의 시간표 세션 데이터 가져오기</h4>
+            <img 
+                src="/img/나의시간표.png" 
+                style="width: 100%; border-radius: 10px;" 
+                title="마이페이지 나의시간표" 
+            />
+            <ul>
+                <li>
+                    <b>/api/v1/users/sessions API 호출</b> :
+                    강연의 제목, 강연자 이름, 연사 이미지 가져옴
+                </li>
+            </ul>
+            <h5 style="font-weight: bold;">
+                <b>세션 강조 표시</b> :
+            </h5>
+            <ul>
+                <li>
+                    강연 페이지에서 사용자가 + 담기 버튼 클릭한 세션은 진하게 표시되게 구현
+                </li>
+                <li>
+                    그렇지 않은 세션은 연하게 표시하여 시각적 차이를 제공
+                </li>
+            </ul>
+
+            <div class="code-container">
+            <div class="code-header">
+                <div class="code-dots">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+                </div>
+                <div class="code-title">mypage.jsx</div>
+            </div>
+            <pre style="padding-top: 10px;"><code><span class="token-comment">// 세션 데이터 가져오기</span>
+            <span class="token-keyword">const</span> <span class="token function-variable function">fetchMySchedule</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+            <span class="token-keyword">const</span> accessToken <span class="token operator">=</span> localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token-string">"access-token"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token-keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>accessToken<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token function">navigate</span><span class="token punctuation">(</span><span class="token-string">"/login"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            
+            <span class="token-keyword">try</span> <span class="token punctuation">{</span>
+                <span class="token-keyword">const</span> response <span class="token operator">=</span> <span class="token keyword">await</span> axios<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token-string">'/api/v1/users/sessions'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+                headers<span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token function-variable function">Authorization</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Bearer </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>accessToken<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            
+                <span class="token-keyword">if</span> <span class="token punctuation">(</span>response<span class="token punctuation">.</span>data<span class="token punctuation">.</span>success<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token-keyword">const</span> sortedSessions <span class="token operator">=</span> response<span class="token punctuation">.</span>data<span class="token punctuation">.</span>response<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token operator">=></span> 
+                    a<span class="token punctuation">.</span>startTime<span class="token punctuation">.</span><span class="token function">localeCompare</span><span class="token punctuation">(</span>b<span class="token punctuation">.</span>startTime<span class="token punctuation">)</span>
+                <span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token function">setMyScheduleSessions</span><span class="token punctuation">(</span>sortedSessions<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token-comment">// 시간표 세션 상태 업데이트</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token-string">"API Error:"</span><span class="token punctuation">,</span> error<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span><span class="token punctuation">;</span>
+            
+            <span class="token-comment">// 세션 데이터 렌더링</span>
+            <span class="token-jsx-tag"><span class="token-punctuation">&lt;</span>div <span class="token-attr-name">className</span><span class="token-attr-value"><span class="token-punctuation">=</span><span class="token-string">"session-list"</span></span><span class="token-punctuation">&gt;</span></span>
+            <span class="token-punctuation">{</span>myScheduleSessions<span class="token punctuation">.</span><span class="token function">map</span><span class="token-punctuation">(</span><span class="token-punctuation">(</span>session<span class="token punctuation">,</span> index<span class="token-punctuation">)</span> <span class="token-operator">=></span> <span class="token-punctuation">(</span>
+                <span class="token-jsx-tag"><span class="token-punctuation">&lt;</span>div
+                <span class="token-attr-name">key</span><span class="token-attr-value"><span class="token-punctuation">=</span><span class="token-punctuation">{</span>index<span class="token-punctuation">}</span></span>
+                <span class="token-attr-name">className</span><span class="token-attr-value"><span class="token-punctuation">=</span><span class="token-template-string"><span class="token template-punctuation string">`</span><span class="token string">session-item </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>
+                    session<span class="token punctuation">.</span>isAdded <span class="token operator">?</span> <span class="token string">'font-bold text-black'</span> <span class="token operator">:</span> <span class="token string">'text-gray-400'</span>
+                <span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span></span>
+                <span class="token-punctuation">&gt;</span></span>
+                <span class="token-jsx-tag"><span class="token-punctuation">&lt;</span>img <span class="token-attr-name">src</span><span class="token-attr-value"><span class="token-punctuation">=</span><span class="token-punctuation">{</span>session<span class="token punctuation">.</span>speakerImage<span class="token-punctuation">}</span></span> <span class="token-attr-name">alt</span><span class="token-attr-value"><span class="token-punctuation">=</span><span class="token-punctuation">{</span>session<span class="token punctuation">.</span>speakerName<span class="token-punctuation">}</span></span> <span class="token-attr-name">className</span><span class="token-attr-value"><span class="token-punctuation">=</span><span class="token-string">"w-10 h-10 rounded-full"</span></span> <span class="token-punctuation">/&gt;</span></span>
+                <span class="token-jsx-tag"><span class="token-punctuation">&lt;</span>div<span class="token-punctuation">&gt;</span></span><span class="token-punctuation">{</span>session<span class="token punctuation">.</span>title<span class="token-punctuation">}</span><span class="token-jsx-tag"><span class="token-punctuation">&lt;/</span>div<span class="token-punctuation">&gt;</span></span>
+                <span class="token-jsx-tag"><span class="token-punctuation">&lt;</span>div<span class="token-punctuation">&gt;</span></span><span class="token-punctuation">{</span>session<span class="token punctuation">.</span>speakerName<span class="token-punctuation">}</span><span class="token-jsx-tag"><span class="token-punctuation">&lt;/</span>div<span class="token-punctuation">&gt;</span></span>
+                <span class="token-jsx-tag"><span class="token-punctuation">&lt;/</span>div<span class="token-punctuation">&gt;</span></span>
+            <span class="token-punctuation">)</span><span class="token-punctuation">)</span><span class="token-punctuation">}</span>
+            <span class="token-jsx-tag"><span class="token-punctuation">&lt;/</span>div<span class="token-punctuation">&gt;</span></span></code></pre>
+            </div>
+
+            <br />
+
+            <h4>🔥프로필 이미지 업데이트</h4>
+            <img 
+                src="/img/이미지수정.PNG" 
+                style="width: 100%; border-radius: 10px;" 
+                title="마이페이지 이미지수정" 
+            />
+            <h5 style="font-weight: bold;">
+                <b>이미지 선택 및 미리보기</b> :
+            </h5>
+            <ul>
+                <li>사용자가 파일 입력 필드에서 이미지 선택하여 업데이트 가능</li>
+                <li>상태(selectedFile)에 선택된 파일을 저장</li>
+            </ul>
+            <h5 style="font-weight: bold;">
+                <b>/api/v1/users/profile/image API 호출</b> :
+            </h5>
+            <ul>
+                <li>선택된 이미지를 FormData로 변환하여 API로 전송</li>
+                <li>성공적으로 업로드된 이미지는 사용자의 마이페이지 프로필에 반영</li>
+            </ul>
+
+            <div class="code-container">
+            <div class="code-header">
+                <div class="code-dots">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+                </div>
+                <div class="code-title">mypage.jsx</div>
+            </div>
+            <pre style="padding-top: 10px;"><code><span class="token-comment">// 파일 선택 처리</span>
+            <span class="token-keyword">const</span> <span class="token function-variable function">handleFileChange</span> <span class="token operator">=</span> <span class="token punctuation">(</span>event<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+            <span class="token function">setSelectedFile</span><span class="token-punctuation">(</span>event<span class="token punctuation">.</span>target<span class="token punctuation">.</span>files<span class="token-punctuation">[</span><span class="token-number">0</span><span class="token-punctuation">]</span><span class="token-punctuation">)</span><span class="token-punctuation">;</span> <span class="token-comment">// 선택된 파일 상태에 저장</span>
+            <span class="token-punctuation">}</span><span class="token-punctuation">;</span>
+            
+            <span class="token-comment">// 이미지 업로드 처리</span>
+            <span class="token-keyword">const</span> <span class="token function-variable function">handleImageUpload</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>selectedFile<span class="token-punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token function">alert</span><span class="token-punctuation">(</span><span class="token-string">'파일을 선택해주세요.'</span><span class="token-punctuation">)</span><span class="token-punctuation">;</span>
+                <span class="token keyword">return</span><span class="token-punctuation">;</span>
+            <span class="token-punctuation">}</span>
+            
+            <span class="token-keyword">const</span> formData <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FormData</span><span class="token-punctuation">(</span><span class="token-punctuation">)</span><span class="token-punctuation">;</span>
+            formData<span class="token punctuation">.</span><span class="token function">append</span><span class="token-punctuation">(</span><span class="token-string">'requestImage'</span><span class="token-punctuation">,</span> selectedFile<span class="token-punctuation">)</span><span class="token-punctuation">;</span>
+            
+            <span class="token keyword">try</span> <span class="token punctuation">{</span>
+                <span class="token-keyword">const</span> accessToken <span class="token operator">=</span> localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token-punctuation">(</span><span class="token-string">'access-token'</span><span class="token-punctuation">)</span><span class="token-punctuation">;</span>
+                <span class="token-keyword">const</span> response <span class="token operator">=</span> <span class="token keyword">await</span> axios<span class="token punctuation">.</span><span class="token function">put</span><span class="token-punctuation">(</span>
+                <span class="token-string">'https://fit-conference.shop/api/v1/users/profile/image'</span><span class="token-punctuation">,</span>
+                formData<span class="token-punctuation">,</span>
+                <span class="token punctuation">{</span>
+                    headers<span class="token operator">:</span> <span class="token punctuation">{</span>
+                    <span class="token function-variable function">Authorization</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Bearer </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>accessToken<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+                    <span class="token string">'Content-Type'</span><span class="token operator">:</span> <span class="token string">'multipart/form-data'</span><span class="token punctuation">,</span>
+                    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                <span class="token punctuation">}</span>
+                <span class="token-punctuation">)</span><span class="token-punctuation">;</span>
+            
+                <span class="token-keyword">if</span> <span class="token punctuation">(</span>response<span class="token punctuation">.</span>data<span class="token punctuation">.</span>success<span class="token-punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token function">alert</span><span class="token-punctuation">(</span><span class="token-string">'프로필 이미지가 성공적으로 업데이트되었습니다.'</span><span class="token-punctuation">)</span><span class="token-punctuation">;</span>
+                <span class="token function">fetchUserAccount</span><span class="token-punctuation">(</span><span class="token-punctuation">)</span><span class="token-punctuation">;</span> <span class="token-comment">// 최신 프로필 데이터를 다시 가져오기</span>
+                <span class="token-punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                <span class="token function">alert</span><span class="token-punctuation">(</span><span class="token-string">'프로필 이미지 업데이트에 실패했습니다.'</span><span class="token-punctuation">)</span><span class="token-punctuation">;</span>
+                <span class="token-punctuation">}</span>
+            <span class="token-punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>error<span class="token-punctuation">)</span> <span class="token punctuation">{</span>
+                console<span class="token punctuation">.</span><span class="token function">error</span><span class="token-punctuation">(</span><span class="token-string">'이미지 업로드 실패'</span><span class="token-punctuation">,</span> error<span class="token-punctuation">)</span><span class="token-punctuation">;</span>
+                <span class="token function">alert</span><span class="token-punctuation">(</span><span class="token-string">'이미지 업로드 중 오류가 발생했습니다.'</span><span class="token-punctuation">)</span><span class="token-punctuation">;</span>
+            <span class="token-punctuation">}</span>
+            <span class="token-punctuation">}</span><span class="token-punctuation">;</span></code></pre>
+            </div>
+
+            <br />
+
+            <h4>🔥이름|직무|연차|관심분야</h4>
+            <img 
+                src="/img/수정.png" 
+                style="width: 100%; border-radius: 10px;" 
+                title="마이페이지 수정" 
+            />
+            <h5 style="font-weight: bold;">
+                <b>사용자 정보 수정</b> :
+            </h5>
+            <ul>
+                <li>이름 - 입력 필드를 통해 사용자가 직접 수정 가능</li>
+                <li>직무와 연차 - 드롭다운 형태로 선택 가능</li>
+                <li>관심 분야 - 태그 최대 3개까지 선택하도록 구현</li>
+            </ul>
+            <h5 style="font-weight: bold;">
+                <b>프로필 저장 처리</b> :
+            </h5>
+            <ul>
+                <li>사용자가 모든 수정 사항을 완료한 뒤 저장하기 버튼을 눌러 /api/v1/users/profile API 호출</li>
+                <li>서버에 업데이트된 데이터를 저장하고 화면에 반영</li>
+            </ul>
+
+            <h5 style="font-weight: bold;">
+                🖋️상태 관리
+            </h5>
+            <div class="code-container">
+            <div class="code-header">
+                <div class="code-dots">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+                </div>
+                <div class="code-title">mypage.jsx</div>
+            </div>
+            <pre style="padding-top: 10px;"><code><span class="token-comment">// 상태 변수 정의</span>
+            <span class="token-keyword">const</span> <span class="token punctuation">[</span>lastName<span class="token punctuation">,</span> setLastName<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token-punctuation">(</span><span class="token-string">''</span><span class="token-punctuation">)</span><span class="token-punctuation">;</span>
+            <span class="token-keyword">const</span> <span class="token punctuation">[</span>selectedValue<span class="token punctuation">,</span> setSelectedValue<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token-punctuation">(</span><span class="token-string">''</span><span class="token-punctuation">)</span><span class="token-punctuation">;</span>
+            <span class="token-keyword">const</span> <span class="token punctuation">[</span>selectedValue2<span class="token punctuation">,</span> setSelectedValue2<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token-punctuation">(</span><span class="token-string">''</span><span class="token-punctuation">)</span><span class="token-punctuation">;</span>
+            <span class="token-keyword">const</span> <span class="token punctuation">[</span>selectedTags<span class="token punctuation">,</span> setSelectedTags<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token-punctuation">(</span><span class="token-punctuation">[</span><span class="token-punctuation">]</span><span class="token-punctuation">)</span><span class="token-punctuation">;</span></code></pre>
+            </div>
+
+            <h5 style="font-weight: bold;">
+                🖋️API 호출
+            </h5>
+            <div class="code-container">
+            <div class="code-header">
+                <div class="code-dots">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+                </div>
+                <div class="code-title">mypage.jsx</div>
+            </div>
+            <pre style="padding-top: 10px;"><code><span class="token-comment">// 프로필 저장 API 호출</span>
+            <span class="token-keyword">const</span> <span class="token function-variable function">handleSave</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+            <span class="token-keyword">const</span> profileData <span class="token operator">=</span> <span class="token punctuation">{</span>
+                name<span class="token operator">:</span> lastName<span class="token punctuation">,</span>
+                job<span class="token operator">:</span> selectedValue<span class="token punctuation">,</span>
+                years<span class="token operator">:</span> selectedValue2<span class="token punctuation">,</span>
+                interests<span class="token operator">:</span> selectedTags<span class="token punctuation">,</span> <span class="token-comment">// 선택한 태그들</span>
+            <span class="token punctuation">}</span><span class="token punctuation">;</span>
+            
+            <span class="token-keyword">try</span> <span class="token punctuation">{</span>
+                <span class="token-keyword">const</span> accessToken <span class="token operator">=</span> localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token-string">'access-token'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token-keyword">const</span> response <span class="token operator">=</span> <span class="token keyword">await</span> axios<span class="token punctuation">.</span><span class="token function">put</span><span class="token-punctuation">(</span>
+                <span class="token-string">'https://fit-conference.shop/api/v1/users/profile'</span><span class="token-punctuation">,</span>
+                profileData<span class="token-punctuation">,</span>
+                <span class="token punctuation">{</span>
+                    headers<span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token function-variable function">Authorization</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Bearer </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>accessToken<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                <span class="token punctuation">}</span>
+                <span class="token-punctuation">)</span><span class="token-punctuation">;</span>
+            
+                <span class="token-keyword">if</span> <span class="token punctuation">(</span>response<span class="token punctuation">.</span>data<span class="token punctuation">.</span>success<span class="token-punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token-comment">// Redux 상태 업데이트</span>
+                <span class="token function">dispatch</span><span class="token-punctuation">(</span><span class="token function">updateProfile</span><span class="token-punctuation">(</span><span class="token punctuation">{</span>
+                    name<span class="token operator">:</span> lastName<span class="token punctuation">,</span>
+                    job<span class="token operator">:</span> selectedValue<span class="token punctuation">,</span>
+                    experience<span class="token operator">:</span> selectedValue2<span class="token punctuation">,</span>
+                    interests<span class="token operator">:</span> selectedTags<span class="token punctuation">,</span>
+                <span class="token punctuation">}</span><span class="token-punctuation">)</span><span class="token-punctuation">)</span><span class="token-punctuation">;</span>
+                <span class="token function">alert</span><span class="token-punctuation">(</span><span class="token-string">'프로필이 성공적으로 업데이트되었습니다.'</span><span class="token-punctuation">)</span><span class="token-punctuation">;</span>
+                <span class="token-punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                <span class="token function">alert</span><span class="token-punctuation">(</span><span class="token-string">'프로필 업데이트에 실패했습니다.'</span><span class="token-punctuation">)</span><span class="token-punctuation">;</span>
+                <span class="token-punctuation">}</span>
+            <span class="token-punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>error<span class="token-punctuation">)</span> <span class="token punctuation">{</span>
+                console<span class="token-punctuation">.</span><span class="token function">error</span><span class="token-punctuation">(</span><span class="token-string">'프로필 업데이트 실패'</span><span class="token-punctuation">,</span> error<span class="token-punctuation">)</span><span class="token-punctuation">;</span>
+                <span class="token function">alert</span><span class="token-punctuation">(</span><span class="token-string">'프로필 업데이트 중 오류가 발생했습니다.'</span><span class="token-punctuation">)</span><span class="token-punctuation">;</span>
+            <span class="token-punctuation">}</span>
+            <span class="token-punctuation">}</span><span class="token-punctuation">;</span></code></pre>
+            </div>
+
+            <h5 style="font-weight: bold;">
+                🖋️마이페이지 반영
+            </h5>
+            <div class="code-container">
+            <div class="code-header">
+                <div class="code-dots">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+                </div>
+                <div class="code-title">mypage.jsx</div>
+            </div>
+            <pre style="padding-top: 10px;"><code><span class="token-comment">// 마이페이지에 수정된 데이터 표시</span>
+            <span class="token-jsx-tag"><span class="token-punctuation">&lt;</span>div<span class="token-punctuation">&gt;</span></span>
+            <span class="token-jsx-tag"><span class="token-punctuation">&lt;</span>div <span class="token-attr-name">className</span><span class="token-attr-value"><span class="token-punctuation">=</span><span class="token-string">"text-black text-2xl font-bold"</span></span><span class="token-punctuation">&gt;</span></span>
+                <span class="token-punctuation">{</span>name <span class="token-operator">||</span> <span class="token-string">'이름 없음'</span><span class="token-punctuation">}</span>
+            <span class="token-jsx-tag"><span class="token-punctuation">&lt;/</span>div<span class="token-punctuation">&gt;</span></span>
+            <span class="token-jsx-tag"><span class="token-punctuation">&lt;</span>div <span class="token-attr-name">className</span><span class="token-attr-value"><span class="token-punctuation">=</span><span class="token-string">"text-[#606166] text-lg"</span></span><span class="token-punctuation">&gt;</span></span>
+                <span class="token-punctuation">{</span>job <span class="token-operator">||</span> <span class="token-string">'직무 없음'</span><span class="token-punctuation">}</span>
+            <span class="token-jsx-tag"><span class="token-punctuation">&lt;/</span>div<span class="token-punctuation">&gt;</span></span>
+            <span class="token-jsx-tag"><span class="token-punctuation">&lt;</span>div <span class="token-attr-name">className</span><span class="token-attr-value"><span class="token-punctuation">=</span><span class="token-string">"text-[#606166] text-lg"</span></span><span class="token-punctuation">&gt;</span></span>
+                <span class="token-punctuation">{</span>experience <span class="token-operator">||</span> <span class="token-string">'연차 없음'</span><span class="token-punctuation">}</span>
+            <span class="token-jsx-tag"><span class="token-punctuation">&lt;/</span>div<span class="token-punctuation">&gt;</span></span>
+            <span class="token-jsx-tag"><span class="token-punctuation">&lt;</span>div <span class="token-attr-name">className</span><span class="token-attr-value"><span class="token-punctuation">=</span><span class="token-string">"flex flex-wrap gap-2"</span></span><span class="token-punctuation">&gt;</span></span>
+                <span class="token-punctuation">{</span>interests<span class="token-punctuation">.</span><span class="token function">map</span><span class="token-punctuation">(</span><span class="token-punctuation">(</span>interest<span class="token-punctuation">,</span> index<span class="token-punctuation">)</span> <span class="token-operator">=></span> <span class="token-punctuation">(</span>
+                <span class="token-jsx-tag"><span class="token-punctuation">&lt;</span>span <span class="token-attr-name">key</span><span class="token-attr-value"><span class="token-punctuation">=</span><span class="token-punctuation">{</span>index<span class="token-punctuation">}</span></span> <span class="token-attr-name">className</span><span class="token-attr-value"><span class="token-punctuation">=</span><span class="token-string">"tag"</span></span><span class="token-punctuation">&gt;</span></span>
+                    <span class="token-punctuation">{</span>interest<span class="token-punctuation">}</span>
+                <span class="token-jsx-tag"><span class="token-punctuation">&lt;/</span>span<span class="token-punctuation">&gt;</span></span>
+                <span class="token-punctuation">)</span><span class="token-punctuation">)</span><span class="token-punctuation">}</span>
+            <span class="token-jsx-tag"><span class="token-punctuation">&lt;/</span>div<span class="token-punctuation">&gt;</span></span>
+            <span class="token-jsx-tag"><span class="token-punctuation">&lt;/</span>div<span class="token-punctuation">&gt;</span></span></code></pre>
+            </div>
+
+            <br />
+
+            <ol>
+                <li>이름 수정</li>
+                <ul>
+                    <li>입력 필드에 사용자 이름 입력</li>
+                    <li>수정된 이름이 lastName 상태로 저장</li>
+                </ul>
+
+                <li>직무 및 연차 선택</li>
+                <ul>
+                    <li>드롭다운 형태로 구성된 직무와 연차 목록에서 사용자가 선택</li>
+                    <li>선택된 값은 각각 selectedValue와 selectedValue2 상태로 저장</li>
+                </ul>
+
+                <li>관심 분야(태그)</li>
+                <ul>
+                    <li>관심 분야 태그 중 최대 3개를 선택 가능</li>
+                    <li>선택된 태그는 selectedTags 상태에 저장</li>
+                </ul>
+
+                <li>저장하기 버튼 클릭</li>
+                <ul>
+                    <li>사용자 입력 데이터를 하나의 객체로 구성하여 서버 API에 전달</li>
+                    <li>성공적으로 저장되면 리덕스 상태 및 UI를 업데이트하여 반영</li>
+                </ul>
+            </ol>
+            
+            <p>🐱 <b>깃허브</b><br>
+                &nbsp;&nbsp;👉 <a href="https://github.com/orgs/FiT-8-plus-1-BiT/repositories"
+                    style="text-decoration: none; color: crimson;"
+                >
+                    https://github.com/orgs/FiT-8-plus-1-BiT/repositories
                 </a>
             </p>
         </div>
@@ -606,8 +1220,8 @@
                 </tr>
                 <tr>
                     <td>프론트엔드</td>
-                    <td>CSS3, HTML5</td>
-                    <td>React</td>
+                    <td>CSS3, HTML5, React</td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>RDBMS (관계형 데이터베이스 관리 시스템)</td>
@@ -616,8 +1230,8 @@
                 </tr>
                 <tr>
                     <td>DevOps [Development & Operations]</td>
-                    <td></td>
                     <td>Git</td>
+                    <td></td>
                 </tr>
             </tbody>
         </table>
@@ -631,6 +1245,45 @@
     </footer>
 
     <script>
+        // 스크롤 시 애니메이션 트리거
+        window.addEventListener('scroll', () => {
+            const elements = document.querySelectorAll('.fade-in, .slide-in');
+            const windowHeight = window.innerHeight;
+
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('visible'); // visible 클래스 추가
+                }
+            });
+        });
+
+        // 캐러셀 제어
+        const carouselWrapper = document.querySelector('.carousel-wrapper');
+        const prevButton = document.querySelector('.carousel-control.prev');
+        const nextButton = document.querySelector('.carousel-control.next');
+        let currentIndex = 0;
+
+        prevButton.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateCarousel();
+            }
+        });
+
+        nextButton.addEventListener('click', () => {
+            if (currentIndex < carouselWrapper.children.length - 1) {
+                currentIndex++;
+                updateCarousel();
+            }
+        });
+
+        function updateCarousel() {
+            const offset = -currentIndex * carouselWrapper.children[0].offsetWidth;
+            carouselWrapper.style.transform = `translateX(${offset}px)`;
+        }
+
         // 스크롤 애니메이션을 위한 JavaScript
         window.addEventListener('scroll', () => {
             const aboutSection = document.querySelector('.about');
@@ -653,33 +1306,77 @@
         });
 
         document.addEventListener('DOMContentLoaded', () => {
-            const carouselWrapper = document.querySelector('.carousel-wrapper');
+            const carousel = document.querySelector('.carousel');
+            const wrapper = document.querySelector('.carousel-wrapper');
             const items = document.querySelectorAll('.carousel-item');
-            const itemCount = items.length;
-            const itemWidth = items[0].clientWidth;
-            let index = 0;
-
-            function moveToSlide(newIndex) {
-                index = (newIndex + itemCount) % itemCount;
-                const offset = -index * itemWidth;
-                carouselWrapper.style.transform = `translateX(${offset}px)`;
+            const prevBtn = document.querySelector('.carousel-control.prev');
+            const nextBtn = document.querySelector('.carousel-control.next');
+            
+            let currentIndex = 0;
+            let intervalId;
+            const intervalTime = 8000; // 8초 간격
+            
+            // 캐러셀 아이템 너비 조정 (부모 요소 기준)
+            function setItemWidth() {
+                const carouselWidth = carousel.offsetWidth;
+                items.forEach(item => {
+                    item.style.width = `${carouselWidth}px`;
+                });
+                updateCarousel();
             }
-
-            function moveToNextSlide() {
-                moveToSlide(index + 1);
+            
+            // 캐러셀 위치 업데이트
+            function updateCarousel() {
+                const carouselWidth = carousel.offsetWidth;
+                wrapper.style.transform = `translateX(-${currentIndex * carouselWidth}px)`;
             }
-
-            function moveToPrevSlide() {
-                moveToSlide(index - 1);
+            
+            // 다음 슬라이드로 이동
+            function nextSlide() {
+                currentIndex = (currentIndex + 1) % items.length;
+                updateCarousel();
             }
-
-            // 자동 슬라이드 전환
-            setInterval(moveToNextSlide, 5000);
-
-            // 좌우 화살표 버튼 이벤트 리스너
-            document.querySelector('.carousel-control.next').addEventListener('click', moveToNextSlide);
-            document.querySelector('.carousel-control.prev').addEventListener('click', moveToPrevSlide);
-        });
+            
+            // 이전 슬라이드로 이동
+            function prevSlide() {
+                currentIndex = (currentIndex - 1 + items.length) % items.length;
+                updateCarousel();
+            }
+            
+            // 자동 슬라이드 시작
+            function startAutoSlide() {
+                intervalId = setInterval(nextSlide, intervalTime);
+            }
+            
+            // 자동 슬라이드 정지
+            function stopAutoSlide() {
+                clearInterval(intervalId);
+            }
+            
+            // 이벤트 리스너 설정
+            nextBtn.addEventListener('click', () => {
+                stopAutoSlide();
+                nextSlide();
+                startAutoSlide();
+            });
+            
+            prevBtn.addEventListener('click', () => {
+                stopAutoSlide();
+                prevSlide();
+                startAutoSlide();
+            });
+            
+            // 마우스 호버 시 자동 슬라이드 일시 정지
+            carousel.addEventListener('mouseenter', stopAutoSlide);
+            carousel.addEventListener('mouseleave', startAutoSlide);
+            
+            // 초기 설정
+            setItemWidth();
+            startAutoSlide();
+            
+            // 윈도우 리사이즈 대응
+            window.addEventListener('resize', setItemWidth);
+        }); 
 
         // 모달 열고 닫는 동작 처리하는 코드
         document.addEventListener('DOMContentLoaded', () => {

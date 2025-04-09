@@ -1,0 +1,400 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    box-sizing: border-box;
+}
+
+.code-container {
+    width: 100%;
+    max-width: 800px;
+    background: #282c34;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+.code-header {
+    background: #1e2227;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #3b4048;
+}
+.code-title {
+    color: #9da5b3;
+    font-size: 12px;
+    font-weight: 500;
+}
+.code-title2 {
+    background: #1e2227;
+    color: #9da5b3;
+    padding: 12px;
+    margin-bottom: 20px;
+    font-size: 12px;
+    font-weight: 500;
+}
+pre {
+    margin: 0;
+    margin-left: 10px;
+    padding-bottom: 15px;
+    color: #abb2bf;
+    font-family: 'Fira Code', 'Consolas', monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    tab-size: 2;
+}
+.token-keyword { color: #c678dd; }
+.token-function { color: #61afef; }
+.token-arrow { color: #56b6c2; }
+.token-string { color: #98c379; }
+.token-attr { color: #d19a66; }
+.token-comment { color: #5c6370; font-style: italic; }
+.token-jsx-tag { color: #e06c75; }
+
+/* 요소 등장 애니메이션 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* 헤더 텍스트 애니메이션 */
+header h1 {
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* 소개 섹션 등장 효과 */
+.about-content img,
+.about-text {
+    animation: slideIn 1.5s ease-in-out;
+}
+
+/* 프로젝트 섹션 캐러셀 아이템 등장 효과 */
+.carousel-item {
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+header {
+    background-image: url("img/배경.png");
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+    position: relative;
+    box-sizing: border-box; /* 패딩 및 테두리를 포함하여 너비 계산 */
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+header h1, header nav ul {
+    position: relative;
+    z-index: 2;
+}
+
+header nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+    color: #333;
+}
+
+/* 소개 섹션 */
+.about {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box; /* 패딩 및 테두리를 포함하여 너비 계산 */
+}
+
+.about h2 {
+    text-align: center;
+    color: #333;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.about-content img {
+    border-radius: 40px;
+    width: 250px;
+    height: auto;
+}
+
+.about-text {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+/* 푸터 */
+.footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    box-sizing: border-box; /* 패딩 및 테두리를 포함하여 너비 계산 */
+}
+
+.about > ul > li > b {
+    color: orange;
+}
+
+h1 {
+    border: 2px solid white;
+    padding: 20px;
+    background-color: #8d8d8d; 
+    color: white;
+    text-align: center; 
+    margin: 50px;
+}
+
+/* 캐러셀 섹션 스타일 */
+.projects {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.carousel {
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.carousel-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    align-items: center;
+}
+
+.carousel-item {
+    min-width: 100%;
+    flex-shrink: 0; /* 아이템이 줄어들지 않도록 설정 */
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* 내용을 중앙에 배치 */
+    align-items: center; /* 내용을 중앙에 배치 */
+    height: 800px; /* 고정 높이 설정 */
+}
+
+.carousel-item h3 {
+    margin: 0;
+    padding-bottom: 40px;
+}
+
+.carousel-item p {
+    margin: 0;
+}
+
+.open-modal {
+    margin-top: 40px; 
+    border-radius: 10px;
+    padding: 12px 40px; 
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    color: #fff; 
+    border: none; 
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease
+}
+
+.carousel-item > button:hover {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
+    transform: scale(1.05); 
+    transition: all 0.3s ease;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 2;
+    font-size: 24px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-control.prev {
+    left: 10px;
+}
+
+.carousel-control.next {
+    right: 10px;
+}
+
+/* 이동 애니메이션 */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 도구 섹션 스타일 */
+.section {
+    width: 100%;
+    overflow-x: auto; /* 테이블이 너무 넓을 때 수평 스크롤 추가 */
+    padding: 0; /* 여백 제거 */
+    margin: 0; /* 여백 제거 */
+    box-sizing: border-box; /* 패딩 및 테두리를 포함하여 너비 계산 */
+}
+
+/* 테이블 스타일 */
+.tool {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    min-width: 600px; /* 테이블이 너무 좁아지지 않도록 최소 너비 설정 */
+    box-sizing: border-box; /* 패딩 및 테두리를 포함하여 너비 계산 */
+}
+
+.tool th, .tool td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    box-sizing: border-box; /* 패딩 및 테두리를 포함하여 너비 계산 */
+}
+
+.tool th {
+    background-color: #f4f4f4;
+}
+
+.tool td {
+    background-color: #fff;
+}
+
+.tool tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* 모달 스타일 */
+.modal {
+    display: none; /* 기본적으로 숨김 */
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* 어두운 배경색 */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* 모달 창의 너비 조정 */
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.video-container {
+    max-width: 100%;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.video-container:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+video {
+    width: 100%;
+    border-radius: 10px;
+}
