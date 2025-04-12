@@ -44,8 +44,9 @@ pre {
     font-family: 'Fira Code', 'Consolas', monospace;
     font-size: 14px;
     line-height: 1.5;
-    white-space: pre-wrap;
-    word-wrap: break-word; /* 긴 단어를 줄바꿈 */
+    white-space: pre-wrap; /* 줄바꿈 허용 */
+    overflow-wrap: break-word; /* 긴 단어를 줄바꿈 */
+    word-wrap: break-word; /* 하위 호환성을 위해 추가 */
     tab-size: 2;
 }
 .token-keyword { color: #c678dd; }
@@ -57,6 +58,11 @@ pre {
 .token-jsx-tag { color: #e06c75; }
 
 @media (max-width: 768px) {
+    pre {
+        font-size: 12px;
+        line-height: 1.4;
+    }
+    
     .code-container {
         max-width: 90%; /* 화면 너비에 맞게 조정 */
         border-radius: 5px; /* 둥근 모서리 감소 */
