@@ -70,6 +70,7 @@ pre {
     .code-title .code-title2 {
         margin-bottom: 5px; /* 간격 추가 */
         text-align: left;
+        word-wrap: break-word; /* 긴 단어를 줄바꿈 */
     }
 }
 
