@@ -45,6 +45,7 @@ pre {
     font-size: 14px;
     line-height: 1.5;
     white-space: pre-wrap;
+    word-wrap: break-word; /* 긴 단어를 줄바꿈 */
     tab-size: 2;
 }
 .token-keyword { color: #c678dd; }
@@ -54,6 +55,24 @@ pre {
 .token-attr { color: #d19a66; }
 .token-comment { color: #5c6370; font-style: italic; }
 .token-jsx-tag { color: #e06c75; }
+
+@media (max-width: 768px) {
+    .code-container {
+        max-width: 90%; /* 화면 너비에 맞게 조정 */
+        border-radius: 5px; /* 둥근 모서리 감소 */
+        overflow-x: auto; /* 가로 스크롤 활성화 */
+    }
+
+    .code-header {
+       text-align: left;
+    }
+
+    .code-title .code-title2 {
+        margin-bottom: 5px; /* 간격 추가 */
+        text-align: left;
+    }
+}
+
 
 /* 요소 등장 애니메이션 */
 @keyframes fadeIn {
