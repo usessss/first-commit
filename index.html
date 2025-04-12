@@ -649,7 +649,7 @@
                   </div>
                   <div class="code-title">google-login.jsx</div>
                 </div>
-                <pre style="padding-top: 10px; padding-left: 10px;"><code><span class="token-keyword">const</span> <span class="token-function">GoogleLogin</span> <span class="token-arrow">=</span> () <span class="token-arrow">=></span> {
+                <pre style="padding-top: 10px; padding-left: 10px; padding-right: 10px;"><code><span class="token-keyword">const</span> <span class="token-function">GoogleLogin</span> <span class="token-arrow">=</span> () <span class="token-arrow">=></span> {
   <span class="token-keyword">const</span> <span class="token-function">onGoogleLogin</span> <span class="token-arrow">=</span> () <span class="token-arrow">=></span> {
     window.location.href <span class="token-arrow">=</span> <span class="token-string">"https://fit-conference.shop/oauth2/authorization/google"</span>;
   };
@@ -674,7 +674,7 @@
                   </div>
                   <div class="code-title2">google-login.jsx</div>
                 </div>
-                <pre style="padding-left: 10px;"><code><span class="token-keyword">useEffect</span><span class="token-punctuation">(()</span> <span class="token-operator">=></span> <span class="token-punctuation">{</span>
+                <pre style="padding-left: 10px; padding-right: 10px;"><code><span class="token-keyword">useEffect</span><span class="token-punctuation">(()</span> <span class="token-operator">=></span> <span class="token-punctuation">{</span>
     <span class="token-keyword">const</span> <span class="token-function">exchangeToken</span> <span class="token-operator">=</span> <span class="token-keyword">async</span> <span class="token-punctuation">()</span> <span class="token-operator">=></span> <span class="token-punctuation">{</span>
         <span class="token-keyword">try</span> <span class="token-punctuation">{</span>
             <span class="token-keyword">const</span> response <span class="token-operator">=</span> <span class="token-keyword">await</span> <span class="token-function">fetch</span><span class="token-punctuation">(</span><span class="token-string">"https://fit-conference.shop/api/v1/auth/token-exchange"</span><span class="token-punctuation">,</span> <span class="token-punctuation">{</span>
@@ -735,7 +735,7 @@
                   </div>
                   <div class="code-title">main-page.jsx</div>
                 </div>
-                <pre style="padding-top: 10px; padding-left: 10px;"><code><span class="token-keyword">useEffect</span><span class="token-punctuation">(()</span> <span class="token-operator">=></span> <span class="token-punctuation">{</span>
+                <pre style="padding-top: 10px; padding-left: 10px; padding-right: 10px;"><code><span class="token-keyword">useEffect</span><span class="token-punctuation">(()</span> <span class="token-operator">=></span> <span class="token-punctuation">{</span>
   <span class="token-keyword">const</span> <span class="token-function">fetchData</span> <span class="token-operator">=</span> <span class="token-keyword">async</span> <span class="token-punctuation">()</span> <span class="token-operator">=></span> <span class="token-punctuation">{</span>
     <span class="token-keyword">try</span> <span class="token-punctuation">{</span>
       <span class="token-keyword">const</span> response <span class="token-operator">=</span> <span class="token-keyword">await</span> axios<span class="token-punctuation">.</span><span class="token-function">get</span><span class="token-punctuation">(</span><span class="token-string">'/api/v1/speaker'</span><span class="token-punctuation">)</span><span class="token-punctuation">;</span>
@@ -766,7 +766,7 @@
                   </div>
                   <div class="code-title">main-page.jsx</div>
                 </div>
-                <pre style="padding-top: 10px; padding-left: 10px;"><code><span class="token-punctuation">{</span>sessions<span class="token-punctuation">.</span><span class="token-function">map</span><span class="token-punctuation">((</span>session<span class="token-punctuation">,</span> index<span class="token-punctuation">)</span> <span class="token-operator">=></span> <span class="token-punctuation">(</span>
+                <pre style="padding-top: 10px; padding-left: 10px; padding-right: 10px;"><code><span class="token-punctuation">{</span>sessions<span class="token-punctuation">.</span><span class="token-function">map</span><span class="token-punctuation">((</span>session<span class="token-punctuation">,</span> index<span class="token-punctuation">)</span> <span class="token-operator">=></span> <span class="token-punctuation">(</span>
     <span class="token-jsx-tag">&lt;div</span> <span class="token-jsx-attr">key</span><span class="token-operator">=</span><span class="token-punctuation">{</span>index<span class="token-punctuation">}</span> <span class="token-jsx-attr">className</span><span class="token-operator">=</span><span class="token-string">"session-card"</span><span class="token-jsx-tag">&gt;</span>
       <span class="token-jsx-tag">&lt;h3&gt;</span><span class="token-punctuation">{</span>session<span class="token-punctuation">.</span>title<span class="token-punctuation">}</span><span class="token-jsx-tag">&lt;/h3&gt;</span>
       <span class="token-jsx-tag">&lt;div</span> <span class="token-jsx-attr">className</span><span class="token-operator">=</span><span class="token-string">"tags"</span><span class="token-jsx-tag">&gt;</span>
@@ -811,7 +811,7 @@
                       </div>
                       <div class="code-title">mypage.jsx</div>
                     </div>
-                    <pre style="padding-top: 10px; padding-left: 10px;"><code><span class="token-keyword">const</span> <span class="token-function">fetchUserProfile</span> <span class="token-operator">=</span> <span class="token-keyword">async</span> <span class="token-punctuation">()</span> <span class="token-operator">=></span> <span class="token-punctuation">{</span>
+                    <pre style="padding-top: 10px; padding-left: 10px; padding-right: 10px;"><code><span class="token-keyword">const</span> <span class="token-function">fetchUserProfile</span> <span class="token-operator">=</span> <span class="token-keyword">async</span> <span class="token-punctuation">()</span> <span class="token-operator">=></span> <span class="token-punctuation">{</span>
   <span class="token-keyword">try</span> <span class="token-punctuation">{</span>
     <span class="token-keyword">const</span> accessToken <span class="token-operator">=</span> localStorage<span class="token-punctuation">.</span><span class="token-function">getItem</span><span class="token-punctuation">(</span><span class="token-string">"access-token"</span><span class="token-punctuation">)</span><span class="token-punctuation">;</span>
     <span class="token-keyword">if</span> <span class="token-punctuation">(</span><span class="token-operator">!</span>accessToken<span class="token-punctuation">)</span> <span class="token-keyword">return</span> <span class="token-function">navigate</span><span class="token-punctuation">(</span><span class="token-string">'/login'</span><span class="token-punctuation">)</span><span class="token-punctuation">;</span>
@@ -866,7 +866,7 @@
                       </div>
                       <div class="code-title">mypage.jsx</div>
                     </div>
-                    <pre style="padding-top: 10px; padding-left: 10px;"><code><span class="token-keyword">const</span> <span class="token-function">handleLogout</span> <span class="token-operator">=</span> <span class="token-punctuation">()</span> <span class="token-operator">=></span> <span class="token-punctuation">{</span>
+                    <pre style="padding-top: 10px; padding-left: 10px; padding-right: 10px;"><code><span class="token-keyword">const</span> <span class="token-function">handleLogout</span> <span class="token-operator">=</span> <span class="token-punctuation">()</span> <span class="token-operator">=></span> <span class="token-punctuation">{</span>
   <span class="token-comment">// 1. 저장된 access-token 제거</span>
   localStorage<span class="token-punctuation">.</span><span class="token-function">removeItem</span><span class="token-punctuation">(</span><span class="token-string">"access-token"</span><span class="token-punctuation">)</span><span class="token-punctuation">;</span>
   <span class="token-comment">// 2. Redux에서 사용자 상태 초기화</span>
@@ -922,7 +922,7 @@
                 </div>
                 <div class="code-title">auth-slice.js</div>
             </div>
-            <pre style="padding-top: 10px; padding-left: 10px;"><code><span class="token-keyword">const</span> initialState <span class="token-operator">=</span> <span class="token-punctuation">{</span>
+            <pre style="padding-top: 10px; padding-left: 10px; padding-right: 10px;"><code><span class="token-keyword">const</span> initialState <span class="token-operator">=</span> <span class="token-punctuation">{</span>
   job<span class="token-operator">:</span> <span class="token-keyword">null</span><span class="token-punctuation">,</span>
   experience<span class="token-operator">:</span> <span class="token-keyword">null</span><span class="token-punctuation">,</span>
   interests<span class="token-operator">:</span> <span class="token-punctuation">[</span><span class="token-punctuation">]</span><span class="token-punctuation">,</span>
@@ -958,7 +958,7 @@
                 </div>
                 <div class="code-title">mypage.jsx</div>
             </div>
-            <pre style="padding-top: 10px; padding-left: 10px;"><code><span class="token-keyword">const</span> name <span class="token-operator">=</span> <span class="token-function">useSelector</span><span class="token-punctuation">((</span>state<span class="token-punctuation">)</span> <span class="token-operator">=></span> state<span class="token-punctuation">.</span>auth<span class="token-punctuation">.</span>name<span class="token-punctuation">)</span><span class="token-punctuation">;</span>
+            <pre style="padding-top: 10px; padding-left: 10px; padding-right: 10px;"><code><span class="token-keyword">const</span> name <span class="token-operator">=</span> <span class="token-function">useSelector</span><span class="token-punctuation">((</span>state<span class="token-punctuation">)</span> <span class="token-operator">=></span> state<span class="token-punctuation">.</span>auth<span class="token-punctuation">.</span>name<span class="token-punctuation">)</span><span class="token-punctuation">;</span>
 <span class="token-keyword">const</span> job <span class="token-operator">=</span> <span class="token-function">useSelector</span><span class="token-punctuation">((</span>state<span class="token-punctuation">)</span> <span class="token-operator">=></span> state<span class="token-punctuation">.</span>auth<span class="token-punctuation">.</span>job<span class="token-punctuation">)</span><span class="token-punctuation">;</span>
 <span class="token-keyword">const</span> experience <span class="token-operator">=</span> <span class="token-function">useSelector</span><span class="token-punctuation">((</span>state<span class="token-punctuation">)</span> <span class="token-operator">=></span> state<span class="token-punctuation">.</span>auth<span class="token-punctuation">.</span>experience<span class="token-punctuation">)</span><span class="token-punctuation">;</span>
 <span class="token-keyword">const</span> interests <span class="token-operator">=</span> <span class="token-function">useSelector</span><span class="token-punctuation">((</span>state<span class="token-punctuation">)</span> <span class="token-operator">=></span> state<span class="token-punctuation">.</span>auth<span class="token-punctuation">.</span>interests<span class="token-punctuation">)</span><span class="token-punctuation">;</span>
@@ -1032,7 +1032,7 @@
                 </div>
                 <div class="code-title">mypage.jsx</div>
             </div>
-            <pre style="padding-top: 10px; padding-left: 10px;"><code><span class="token-comment">// 좋아요한 강연 가져오기</span>
+            <pre style="padding-top: 10px; padding-left: 10px; padding-right: 10px;"><code><span class="token-comment">// 좋아요한 강연 가져오기</span>
 <span class="token-keyword">const</span> <span class="token function-variable function">fetchLikedSessions</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
 <span class="token keyword">const</span> accessToken <span class="token operator">=</span> localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">'access-token'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>accessToken<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token function">navigate</span><span class="token punctuation">(</span><span class="token string">'/login'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -1079,7 +1079,7 @@
                 </div>
                 <div class="code-title">mypage.jsx</div>
             </div>
-            <pre style="padding-top: 10px; padding-left: 10px;"><code><span class="token-comment">// 모달 상태 관리</span>
+            <pre style="padding-top: 10px; padding-left: 10px; padding-right: 10px;"><code><span class="token-comment">// 모달 상태 관리</span>
 <span class="token-keyword">const</span> <span class="token punctuation">[</span>showModal<span class="token punctuation">,</span> setShowModal<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token-punctuation">(</span><span class="token boolean">false</span><span class="token-punctuation">)</span><span class="token-punctuation">;</span> <span class="token-comment">// 첫 번째 모달 (추천 강연)</span>
 <span class="token-comment">// 모달 열기 및 닫기 함수</span>
 <span class="token-keyword">const</span> <span class="token function-variable function">openModal</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token function">setShowModal</span><span class="token-punctuation">(</span><span class="token boolean">true</span><span class="token-punctuation">)</span><span class="token-punctuation">;</span>
@@ -1130,7 +1130,7 @@
                 </div>
                 <div class="code-title">mypage.jsx</div>
             </div>
-            <pre style="padding-top: 10px; padding-left: 10px;"><code><span class="token-comment">// 세션 데이터 가져오기</span>
+            <pre style="padding-top: 10px; padding-left: 10px; padding-right: 10px;"><code><span class="token-comment">// 세션 데이터 가져오기</span>
 <span class="token-keyword">const</span> <span class="token function-variable function">fetchMySchedule</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
   <span class="token-keyword">const</span> accessToken <span class="token operator">=</span> localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token-string">"access-token"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token-keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>accessToken<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token function">navigate</span><span class="token punctuation">(</span><span class="token-string">"/login"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -1199,7 +1199,7 @@
                 </div>
                 <div class="code-title">mypage.jsx</div>
             </div>
-            <pre style="padding-top: 10px; padding-left: 10px;"><code><span class="token-comment">// 파일 선택 처리</span>
+            <pre style="padding-top: 10px; padding-left: 10px; padding-right: 10px;"><code><span class="token-comment">// 파일 선택 처리</span>
 <span class="token-keyword">const</span> <span class="token function-variable function">handleFileChange</span> <span class="token operator">=</span> <span class="token punctuation">(</span>event<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
   <span class="token function">setSelectedFile</span><span class="token-punctuation">(</span>event<span class="token punctuation">.</span>target<span class="token punctuation">.</span>files<span class="token-punctuation">[</span><span class="token-number">0</span><span class="token-punctuation">]</span><span class="token-punctuation">)</span><span class="token-punctuation">;</span> <span class="token-comment">// 선택된 파일 상태에 저장</span>
 <span class="token-punctuation">}</span><span class="token-punctuation">;</span>
@@ -1275,7 +1275,7 @@
                 </div>
                 <div class="code-title">mypage.jsx</div>
             </div>
-            <pre style="padding-top: 10px; padding-left: 10px;"><code><span class="token-comment">// 상태 변수 정의</span>
+            <pre style="padding-top: 10px; padding-left: 10px; padding-right: 10px;"><code><span class="token-comment">// 상태 변수 정의</span>
 <span class="token-keyword">const</span> <span class="token punctuation">[</span>lastName<span class="token punctuation">,</span> setLastName<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token-punctuation">(</span><span class="token-string">''</span><span class="token-punctuation">)</span><span class="token-punctuation">;</span>
 <span class="token-keyword">const</span> <span class="token punctuation">[</span>selectedValue<span class="token punctuation">,</span> setSelectedValue<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token-punctuation">(</span><span class="token-string">''</span><span class="token-punctuation">)</span><span class="token-punctuation">;</span>
 <span class="token-keyword">const</span> <span class="token punctuation">[</span>selectedValue2<span class="token punctuation">,</span> setSelectedValue2<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token-punctuation">(</span><span class="token-string">''</span><span class="token-punctuation">)</span><span class="token-punctuation">;</span>
@@ -1294,7 +1294,7 @@
                 </div>
                 <div class="code-title">mypage.jsx</div>
             </div>
-            <pre style="padding-top: 10px; padding-left: 10px;"><code><span class="token-comment">// 프로필 저장 API 호출</span>
+            <pre style="padding-top: 10px; padding-left: 10px; padding-right: 10px;"><code><span class="token-comment">// 프로필 저장 API 호출</span>
 <span class="token-keyword">const</span> <span class="token function-variable function">handleSave</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
   <span class="token-keyword">const</span> profileData <span class="token operator">=</span> <span class="token punctuation">{</span>
     name<span class="token operator">:</span> lastName<span class="token punctuation">,</span>
@@ -1343,7 +1343,7 @@
                 </div>
                 <div class="code-title">mypage.jsx</div>
             </div>
-            <pre style="padding-top: 10px; padding-left: 10px;"><code><span class="token-comment">// 마이페이지에 수정된 데이터 표시</span>
+            <pre style="padding-top: 10px; padding-left: 10px; padding-right: 10px;"><code><span class="token-comment">// 마이페이지에 수정된 데이터 표시</span>
 <span class="token-jsx-tag"><span class="token-punctuation">&lt;</span>div<span class="token-punctuation">&gt;</span></span>
   <span class="token-jsx-tag"><span class="token-punctuation">&lt;</span>div <span class="token-attr-name">className</span><span class="token-attr-value"><span class="token-punctuation">=</span><span class="token-string">"text-black text-2xl font-bold"</span></span><span class="token-punctuation">&gt;</span></span>
     <span class="token-punctuation">{</span>name <span class="token-operator">||</span> <span class="token-string">'이름 없음'</span><span class="token-punctuation">}</span>
