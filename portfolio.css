@@ -62,9 +62,9 @@ pre {
         font-size: 12px;
         line-height: 1.4;
     }
-    
+
     .code-container {
-        max-width: 90%; /* 화면 너비에 맞게 조정 */
+        max-width: 100%; /* 화면 너비에 맞게 조정 */
         border-radius: 5px; /* 둥근 모서리 감소 */
         overflow-x: auto; /* 가로 스크롤 활성화 */
     }
