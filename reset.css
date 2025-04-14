@@ -1,0 +1,43 @@
+/* Reset 스타일 추가 */
+* {
+    font-family: 'Georgia', serif;
+    box-sizing: border-box;
+}
+
+/* HTML 및 Body 기본값 */
+html {
+    font-size: 100%; /* 기본 폰트 크기 설정 */
+}
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    overflow-x: hidden; /* 추가: 가로 스크롤 방지 */
+    line-height: 1.6; /* 기본적인 가독성을 위해 설정 */
+}
+
+/* 추가된 Modern Normalize 예제 */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 요소 CSS에서 유연성 보강 */
+header {
+    background-image: url("./img/background.jpg");
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    color: #f5f5dc;
+    position: relative;
+}
+header h1 {
+    font-size: 2.5em;
+}
+
+/* 반응형 모바일 friendly 설계 */
+@media only screen and (max-width: 768px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+}
