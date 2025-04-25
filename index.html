@@ -11,7 +11,31 @@
 <body>
     <!-- 헤더 섹션 -->
     <header class="header">
-        <h1>코드로 말하는 웹 퍼블리셔</h1>
+        <h1>
+            코드로 말하는 웹 퍼블리셔
+
+            <button 
+                id="darkModeToggle" 
+                aria-label="다크모드 토글"
+                style="position: fixed; top: 10px; right: 10px; 
+                    background-color: transparent; border: none;"
+            >
+                <img 
+                    src="/img/moon.png" 
+                    id="moonIcon" 
+                    style="display:none; width: 30px; border: none;
+                        background-color: transparent;" 
+                    alt="다크모드"
+                />
+                <img 
+                    src="/img/sun.png" 
+                    id="sunIcon" 
+                    style="display:inline; width: 30px;" 
+                    alt="라이트모드" 
+                />
+            </button>
+        </h1>
+
         <nav>
             <ul>
                 <li><a href="#about">소개</a></li>
@@ -69,8 +93,8 @@
 
             <div class="carousel-wrapper">
                 <div class="carousel-item fade-in">
-                    <h3 style="color: darkgreen;">
-                        대학교 캡스톤 졸업 작품
+                    <h3 style="color: rgb(8, 165, 8);">
+                        🎓대학교 캡스톤 졸업 작품
                     </h3>
                     <img 
                         src="./img/capstone.png" 
@@ -78,7 +102,7 @@
                         title="대학교 캡스톤 졸작" 
                         style="border-radius: 10px; width: 100%;"
                     />
-                    <h4 style="color: rgb(21, 127, 21);">
+                    <h4 style="color: rgb(8, 165, 8);">
                         MZ 세대를 대상으로 한 맞춤형 향수 추천 쇼핑몰
                     </h4>
                     <div style="display: flex; gap: 4px;">
@@ -96,15 +120,15 @@
 
                 <!-- 추가적인 슬라이드를 여기에 추가하세요 -->
                 <div class="carousel-item">
-                    <h3 style="color: rgb(97, 61, 14);">
-                        온라인 중고 거래 사이트
+                    <h3 style="color: rgb(161, 103, 27);">
+                        🛍️온라인 중고 거래 사이트
                     </h3>
                     <img 
                         src="./img/finalexam.png" 
                         alt="기말고사 프로젝트" title="기말고사 프로젝트 이미지" 
                         style="border-radius: 10px; width: 100%;"
                     />
-                    <h4 style="color: rgb(71, 46, 46);">
+                    <h4 style="color: rgb(161, 103, 27);">
                         Dynamic Web Project로 만든 중고 거래 사이트
                     </h4>
                     <div style="display: block;">
@@ -122,15 +146,15 @@
                 </div>
 
                 <div class="carousel-item">
-                    <h3 style="color: purple;">
-                        나만의 포트폴리오
+                    <h3 style="color: rgb(190, 15, 190);">
+                        🤭나만의 포트폴리오
                     </h3>
                     <img 
                         src="./img/image.png" 
                         alt="나의 포트폴리오" title="나의 포트폴리오"
                         style="border-radius: 10px; width: 100%;"
                     />
-                    <h4 style="color: purple;">
+                    <h4 style="color: rgb(190, 15, 190);">
                         나를 소개하는 페이지 개발하기
                     </h4>
                     <div>
@@ -182,7 +206,7 @@
                 </div>
 
                 <div class="carousel-item">
-                    <h3 style="color: rgb(31, 144, 189);">
+                    <h3 style="color: rgb(55, 192, 247);">
                         🔊대규모 핀테크 사일런트 컨퍼런스 - 8+1 BiT🎧
                     </h3>
                     <img 
@@ -190,7 +214,7 @@
                         alt="F!t 메인페이지" title="F!t 메인페이지"
                         style="border-radius: 10px; width: 100%;"
                     />
-                    <h4 style="color: rgb(31, 144, 189);">
+                    <h4 style="color: rgb(55, 192, 247);">
                         부트캠프에서 4개의 직무와 함께 프로젝트🎶
                     </h4>
                     <div style="display: flex; gap: 4px;">
@@ -216,7 +240,7 @@
     <div id="modal1" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h3 style="color: darkgreen; text-align: center;">
+            <h3 style="color: rgb(8, 165, 8); text-align: center;">
                 🎓캡스톤 프로젝트
             </h3>
             <img 
@@ -224,7 +248,7 @@
                 alt="대학교 졸작" title="대학교 졸작" 
                 style="width: 100%; height: auto; border-radius: 10px;" 
             />
-            <h4 style="color: rgb(21, 127, 21);">
+            <h4 style="color: rgb(8, 165, 8);">
                 MZ 세대를 대상으로 한 맞춤형 향수 추천 쇼핑몰
             </h4>
             <div style="display: flex; gap: 4px;">
@@ -281,15 +305,15 @@
     <div id="modal2" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h3 style="color: rgb(97, 61, 14); text-align: center;">
-                온라인 중고 거래 사이트
+            <h3 style="color: rgb(161, 103, 27); text-align: center;">
+                🛍️온라인 중고 거래 사이트
             </h3>
             <img 
                 src="./img/finalexam.png" 
                 alt="기말고사 프로젝트" title="기말고사 프로젝트 이미지" 
                 style="width: 100%; height: auto; border-radius: 10px;" 
             />
-            <h4 style="color: rgb(62, 16, 16);">
+            <h4 style="color: rgb(161, 103, 27);">
                 <대학교 3학년 1학기 기말고사 <br />
                 Dynamic Web Project로 만든 중고 거래 사이트>
             </h4>
@@ -327,15 +351,15 @@
     <div id="modal3" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h3 style="text-align: center; color: purple;">
-                나만의 포트폴리오
+            <h3 style="text-align: center; color: rgb(190, 15, 190);">
+                🤭나만의 포트폴리오
             </h3>
             <img 
                 src="./img/image.png" 
                 alt="나의 포트폴리오" title="나의 포트폴리오" 
                 style="width: 100%; height: auto; border-radius: 10px;" 
             />
-            <h4 style="color: purple;">
+            <h4 style="color: rgb(190, 15, 190);">
                 나를 소개하는 페이지 개발하기
             </h4>
 
@@ -525,7 +549,7 @@
     <div id="modal5" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h3 style="text-align: center; color: rgb(31, 144, 189);">
+            <h3 style="text-align: center; color: rgb(55, 192, 247);">
                 🔊대규모 핀테크 사일런트 컨퍼런스🎧
             </h3>
 
@@ -1419,7 +1443,7 @@
 
     <!-- 자격증 섹션 -->
     <section id="certification" class="certification"
-        style="background-color: white; padding: 20px 30px;
+        style="padding: 20px 30px;
         border-radius: 10px; margin-bottom: 30px;"
     >
         <h2>🏅 자격증</h2>
@@ -1429,7 +1453,7 @@
 
     <!-- 도구 섹션 -->
     <section id="tool" class="section"
-        style="background-color: white; padding: 20px 30px;
+        style="padding: 20px 30px;
         border-radius: 10px; margin-bottom: 30px;"
     >
         <h2>⛏️ 기술 및 도구</h2>
@@ -1685,6 +1709,37 @@
                 }
             });
         });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggleBtn = document.getElementById('darkModeToggle');
+            const moonIcon = document.getElementById('moonIcon');
+            const sunIcon = document.getElementById('sunIcon');
+
+            // 다크 모드 상태를 localStorage에서 불러오기
+            const darkMode = localStorage.getItem('darkMode');
+            if (darkMode === 'enabled') {
+                document.body.classList.add('dark-mode');
+                moonIcon.style.display = 'inline';
+                sunIcon.style.display = 'none';
+            }
+
+            // 토글 버튼 클릭 이벤트
+            toggleBtn.addEventListener('click', () => {
+                document.body.classList.toggle('dark-mode');
+
+                // 다크 모드 상태를 localStorage에 저장
+                if (document.body.classList.contains('dark-mode')) {
+                    localStorage.setItem('darkMode', 'enabled');
+                    moonIcon.style.display = 'inline';
+                    sunIcon.style.display = 'none';
+                } else {
+                    localStorage.setItem('darkMode', null);
+                    moonIcon.style.display = 'none';
+                    sunIcon.style.display = 'inline';
+                }
+            });
+        });
+
     </script>
 </body>
 </html>

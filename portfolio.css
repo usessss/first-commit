@@ -8,6 +8,64 @@ body {
     overflow-x: hidden; /* 추가: 가로 스크롤 방지 */
 }
 
+body.dark-mode {
+    background-color: #181a1b;
+    color: #e0e0e0;
+}
+
+body.dark-mode .container,
+body.dark-mode header,
+body.dark-mode .about,
+body.dark-mode .projects,
+body.dark-mode .tool,
+body.dark-mode .modal-content,
+body.dark-mode .video-container,
+body.dark-mode .footer {
+    background-color: #23272b !important; /* 배경색 */
+    color: #e0e0e0 !important; /* 글자색 */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4) !important; /* 그림자 */
+}
+
+body.dark-mode header::before {
+    background-color: rgba(20, 20, 20, 0.7) !important;
+}
+
+body.dark-mode header h1,
+body.dark-mode section h2,
+body.dark-mode .about h2,
+body.dark-mode .code-title,
+body.dark-mode .code-title2,
+body.dark-mode .tool th,
+body.dark-mode .carousel-control {
+    color: #ffd700 !important; /* 강조 색상 */
+}
+
+body.dark-mode .tool td {
+    background-color: #181a1b;
+}
+
+body.dark-mode .tool th {
+    background-color: #23272b;
+}
+
+body.dark-mode header nav ul li a {
+    color: #fff8e1 !important;
+}
+
+body.dark-mode header nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.15) !important;
+    color: #ffd700 !important;
+}
+
+body.dark-mode .tool tr:nth-child(even) {
+    background-color: #333 !important;
+}
+
+body.dark-mode .open-modal {
+    background: linear-gradient(135deg, #23272b, #444) !important;
+    color: #ffd700 !important;
+}
+
 .code-container {
     width: 100%;
     max-width: 800px;
@@ -282,7 +340,6 @@ header nav ul li a:hover {
     flex-shrink: 0; /* 아이템이 줄어들지 않도록 설정 */
     box-sizing: border-box;
     padding: 20px;
-    background-color: #f4f4f4;
     border-radius: 8px;
     text-align: center;
     display: flex;
