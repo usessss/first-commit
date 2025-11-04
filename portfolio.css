@@ -21,9 +21,9 @@ body.dark-mode .tool,
 body.dark-mode .modal-content,
 body.dark-mode .video-container,
 body.dark-mode .footer {
-    background-color: #23272b !important; /* 배경색 */
-    color: #e0e0e0 !important; /* 글자색 */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4) !important; /* 그림자 */
+    background-color: #23272b !important;
+    color: #e0e0e0 !important;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4) !important;
 }
 
 body.dark-mode header::before {
