@@ -13,6 +13,10 @@ body.dark-mode {
     color: #e0e0e0;
 }
 
+body.dark-mode section.about div.about-text > p {
+    color: #e0e0e0 !important;
+}
+
 body.dark-mode .container,
 body.dark-mode header,
 body.dark-mode .about,
@@ -44,8 +48,9 @@ body.dark-mode .tool td {
     background-color: #181a1b;
 }
 
-body.dark-mode .tool th {
-    background-color: #23272b;
+body.dark-mode .tool th,
+body.dark-mode section.education > p {
+    background-color: #23272b !important;
 }
 
 body.dark-mode header nav ul li a {
@@ -415,6 +420,20 @@ header nav ul li a:hover {
     }
 }
 
+section.education ,
+section.certification,
+section.section {
+    padding: 20px 30px;
+    border-radius: 10px; 
+    margin-bottom: 30px;
+}
+section.education > p {
+    width: 100%; height: auto; 
+    background-color: rgb(245, 238, 228); 
+    border-radius: 10px; padding: 20px; 
+    font-size: medium; font-weight: 600;
+}
+
 /* 도구 섹션 스타일 */
 .section {
     width: 100%;
@@ -531,10 +550,14 @@ video {
 }
 
 /* 푸터 */
-.footer {
+footer.footer {
     text-align: center;
     padding: 10px;
     background-color: #333;
     color: #fff;
     box-sizing: border-box; /* 패딩 및 테두리를 포함하여 너비 계산 */
+}
+footer.footer > p {
+    text-align: left; 
+    font-style: italic;
 }
