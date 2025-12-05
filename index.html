@@ -57,7 +57,7 @@
                 src="./img/me.jpg" alt="내 사진" title="내 사진" 
             />
             <div class="about-text">
-                <p style="font-weight: bold; color: #7c7b7b;">
+                <p>
                     안녕하세요.<br />
                     저는 꾸준함과 성실함을 바탕으로 새로운 도전에 빠르게 적응하며 성장해온 퍼블리싱 지망자입니다.<br /><br />
 
@@ -93,7 +93,7 @@
             </div>
         </div>
 
-        <ul style="margin-top: 30px; list-style: none;">
+        <ul>
             <li>💻 <b>쉽게 코딩하는 퍼블리셔 개발자</b>가 될 거예요.</li>
             <li>🌍 <b>사용자의 입장을 생각</b>하며 개발 과정에 임할거예요.</li>
             <li>📚 <b>꾸준하게 공부</b>하며 항상 성장하려고 노력해요.</li>
@@ -270,6 +270,36 @@
                     <p>📅 2025년 9월 15일 → 10월 15일</p>
                     
                     <button class="open-modal" data-modal="modal6">
+                        상세 보기
+                    </button>
+                </div>
+
+                <div class="carousel-item">
+                    <h3 style="color: rgb(76, 102, 247);">
+                        🎲 보드게임 출석체크 사이트 ✅
+                    </h3>
+                    <img 
+                        src="./img/board-game.png" 
+                        alt="보드게임 출석체크 사이트" title="보드게임 출석체크 사이트" 
+                        style="border-radius: 10px; width: 100%;"
+                    />
+                    <h4 style="color: rgb(76, 102, 247);">
+                        보드게임 동호회를 다니면서 필요하다고 느껴 직접 제작한 사이트입니다.
+                    </h4>
+                    <div style="display: block;">
+                        <b style="color: #8d8d8d;">HTML</b> |
+                        <b style="color: #8d8d8d;">CSS</b> |
+                        <b style="color: #8d8d8d;">JavaScript</b> |
+                        <b style="color: #8d8d8d;">jQuery</b> |
+                        <b style="color: #8d8d8d;">Bootstrap</b> |
+                        <b style="color: #8d8d8d;">Firebase</b>
+                    </div>
+
+                    <p style="margin-top: 10px;">
+                        📅 2025년 11월 18일 ~
+                    </p>
+
+                    <button class="open-modal" data-modal="modal7">
                         상세 보기
                     </button>
                 </div>
@@ -1620,6 +1650,130 @@
                 하나카드 원큐페이에서 구현된 화면을 참고하여 필요한 코드를 가져오고,<br />
                 추가 기능을 보완해 구현했습니다.
             </h4>
+        </div>
+    </div>
+
+    <div id="modal7" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3 style="text-align: center; color: rgb(76, 102, 247);">
+                🎲 보드게임 출석체크 사이트 ✅
+            </h3>
+            <h5 style="color: rgb(76, 102, 247);">
+                🃏보드게임 동호회 운영을 위한 통합 웹 애플리케이션(출석·입금·위치·게임 기록)🃏
+            </h5>
+            <p class="firebase-desc">
+                출석 체크 시스템은 실시간으로 데이터가 저장되고<br />
+                즉시 반영되어야 했기 때문에 Firebase Realtime Database를 사용했습니다.<br />  
+                페이지 새로고침 없이 실시간으로 데이터 읽기·쓰기·삭제가<br />  
+                가능하다는 점에서 Firebase가 적합했습니다.<br />  
+                웹에서는 Firebase Web Modular SDK(v9)를 사용해 초기화 후,<br />   
+                push / set / get 같은 Database API를 통해 출석 기록을 관리했습니다.
+            </p>
+            <pre>
+[ 모든 페이지 ]
+✌🏼봉우리 보드게임단 로고 클릭 시 메인( 달력 있는 곳 )으로 이동합니다.
+
+[ 메인 ]
+원하시는 날짜 클릭하시면 이름 입력 가능한 알림창이 뜹니다.
+본인 이름 적고 확인 누르면 선택한 날짜에 본인 이름의 라벨이 들어갑니다.
+🔹 라벨 클릭 시 수정 혹은 삭제( = 관리자만 가능 ) 가능합니다.
+👉 수정 : 입력칸에 작성하신 이름 수정하시고 확인 누르면 라벨 색상이 진해집니다.
+👉 삭제 : 다른 분들 이름 라벨 삭제하는 경우가 종종 발생하여 관리자만 삭제할 수 있게 비번 걸어두었습니다.  
+🔹 처음 등록할 때 이름 작성 후 이름 라벨 색상도 선택하실 수 있습니다.
+🔹 날짜에 이름 라벨이 4개부터는 '+ 더보기'가 생성되고 '+ 더보기' 클릭 시 나오는 모달에 해당 날짜에 출석한 사람들 모두 보실 수 있습니다.
+🍔 클리하면 사이드 바가 나오는데 하단 출석 체크 누르시면 오늘 날짜로 입력한 이름 라벨이 들어갑니다. ( 단, 다른 페이지에선 이벤트가 발생하지 않습니다. )
+
+[ 🍔햄버거바( 메뉴바 ) ]
+🔹 일참비 / 월정액 입금하기
+👉 모임장 계좌번호 복사 가능
+👉 카카오톡 로고 클릭 하면 모임장 개인 오픈프로필로 이동합니다.( 여기에 송금 편리하게 가능 )
+👉 카카오뱅크 로고 클릭 하면 앱 있으시다면 자동으로 열립니다.
+👉 국민은행 위와 같습니다.
+
+🔹 봉우리 아지트 위치보기
+👉 위치 어딘지 볼 수 있습니다.( 위치 복사 가능 )
+
+🔹 주차 가능한 곳 보기( 주소 복사 가능 )
+👉 아지트 주변 주차 가능한 곳 한눈에 보실 수 있습니다.( 색별로 주소 매칭 )
+
+🔹 티추 한판
+👉 티추 카드게임 링크 바로가기 및 초보자도 이해 되는 룰 설명
+            </pre>
+            <h4 style="margin: 40px 0 0 10px; ">💠 스플래시</h4>
+            <img src="./img/loading.jpg" alt="">
+            <p>
+                사이트 실행하면 3초간 보여줍니다.<br />
+                ( 코드펜에서 가져왔습니다. )
+            </p>
+            <h4 style="margin: 40px 0 0 10px; ">💠 메인</h4>
+            <img src="./img/main.jpg" alt="">
+            <img src="./img/main-nameadd.jpg" alt="">
+            <p>
+                해당 날짜를 클릭하면 이름 입력창이 뜹니다.<br />
+                이름을 입력하시고 취소 누르면 아무 일도 일어나지 않지만,
+            </p>
+            <img src="./img/main-labelcolor.jpg" alt="">
+            <img src="./img/main-labelcolor2.jpg" alt="">
+            <img src="./img/main-nameaddalert.jpg" alt="">
+            <p>
+                확인 누르면 해당 날짜에 이름이 라벨로 추가됩니다.<br />
+                ( 처음에 이름 등록할 때 라벨 색상도 선택 가능합니다. )
+            </p>
+            <img src="./img/main-removepw.jpg" alt="">
+            <p>
+                원하는 이름 라벨 클릭하면 수정 혹은 삭제 할 수 있습니다.<br />
+                이름 수정 하고 확인 버튼 누르면 이름이 수정됩니다.<br />
+                삭제는 관리자만 가능하게 비번 걸어두었습니다.
+            </p>
+            <img src="./img/main-namemore.jpg" alt="">
+            <p>
+                + 더보기 클릭 시 해당 날짜에 출석한 모든 분들 보실 수 있습니다.
+            </p>
+            <img src="./img/main-sidebar.jpg" alt="">
+            <p>
+                햄버거바(메뉴바)에서 오늘 날짜에 출석 체크하기<br />
+                버튼 클릭 시 오늘 날짜에 이름 라벨이 추가됩니다.<br />
+                ( 단, 다른 페이지에선 이벤트가 발생하지 않습니다. )
+            </p>
+            <h4 style="margin: 40px 0 0 10px; ">💠 월별 이름 검색</h4>
+            <img src="./img/see.jpg" alt="">
+            <img src="./img/see-namedate.jpg" alt="">
+            <p>
+                검색창에는 원하는 이름,<br />
+                출석 체크 확인 월 선택 드롭다운에는 원하는 월 선택하면<br />
+                특정 월에 출석한 이름을 한눈에 보실 수 있습니다.
+            </p>
+            <h4 style="margin: 40px 0 0 10px; ">💠 일참비/월정액 입금하기</h4>
+            <img src="./img/money.jpg" alt="">
+            <p>
+                모임장 계좌번호 복사 가능,<br />
+                카카오톡 로고 클릭 시 모임장 개인 오픈프로필로 이동합니다.<br />
+                ( 여기에 송금 편리하게 가능 )<br />
+                카카오뱅크, 국민은행 로고 클릭 시 앱 있으시다면 자동으로 열립니다.
+            </p>
+            <h4 style="margin: 40px 0 0 10px; ">💠 봉우리 아지트 위치보기</h4>
+            <img src="./img/place.jpg" alt="">
+            <p>
+                보드게임장 위치를 보실 수 있습니다.( 위치 복사 가능 )
+            </p>
+            <h4 style="margin: 40px 0 0 10px; ">💠 주변 주차 가능한 곳 보기</h4>
+            <img src="./img/parking.jpg" alt="">
+            <img src="./img/parking2.jpg" alt="">
+            <p>
+                아지트 주변 주차 가능한 곳 한눈에 보실 수 있습니다.<br />
+                ( 색별로 주소 매칭 되어 있습니다. )
+            </p>
+            <h4 style="margin: 40px 0 0 10px; ">💠 티추 카드게임 한판</h4>
+            <img src="./img/tichu.jpg" alt="">
+            <img src="./img/tichu2.jpg" alt="">
+            <img src="./img/tichu3.jpg" alt="">
+            <img src="./img/tichu4.jpg" alt="">
+            <img src="./img/tichu5.jpg" alt="">
+            <img src="./img/tichu6.jpg" alt="">
+            <p>
+                티추 카드게임 링크 바로가기 및 초보자도 이해 되는 룰 설명입니다.
+            </p>
         </div>
     </div>
 

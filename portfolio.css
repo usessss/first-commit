@@ -178,6 +178,27 @@ header h1 {
     animation: slideIn 1.5s ease-in-out;
 }
 
+section.about {
+    padding: 30px 72px 30px 72px;
+}
+
+section.about div.about-content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+section.about div.about-content div.about-text > p {
+    font-weight: bold; color: #7c7b7b;
+}
+
+section.about > ul {
+    list-style: none; 
+    padding: 0; 
+    margin-top: 40px;
+}
+
 /* 프로젝트 섹션 캐러셀 아이템 등장 효과 */
 .carousel-item {
     animation: fadeIn 1.5s ease-in-out;
@@ -251,6 +272,34 @@ header nav ul li a:hover {
     color: #3f2a14;
 }
 
+div#modal7 div.modal-content > pre {
+    background-color: #b7bbf3; 
+    color: rgb(80, 80, 80); 
+    padding: 20px; 
+    border-radius: 10px; 
+    line-height: 1.5; 
+    font-size: medium;
+    font-weight: bold;
+}
+div#modal7 div.modal-content > img {
+    width: 300px;
+    margin: 20px 0 20px 10px;
+    border-radius: 10px;
+}
+div#modal7 div.modal-content > p {
+    margin-left: 10px;
+}
+div#modal7 div.modal-content > p.firebase-desc {
+    background: #f7f7f7;
+    padding: 18px 20px;
+    border-left: 5px solid #6c63ff;
+    border-radius: 8px;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #444;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+}
+
 @media (max-width: 768px) {
     header {
         padding: 10px;
@@ -263,6 +312,33 @@ header nav ul li a:hover {
     header nav ul li {
         display: inline-block;
         margin: 5px 0px;
+    }
+
+    div#modal6 .modal-content > p {
+        font-size: x-small;
+    }
+
+    div#modal7 div.modal-content > pre {
+        background-color: #b7bbf3; 
+        color: rgb(80, 80, 80); 
+        padding: 20px; 
+        border-radius: 10px; 
+        line-height: 1.5; 
+        font-size: small;
+        font-weight: bold;
+    }
+    div#modal7 div.modal-content > p.firebase-desc {
+        background: #f7f7f7;
+        padding: 18px 20px;
+        border-left: 5px solid #6c63ff;
+        border-radius: 8px;
+        font-size: smaller;
+        line-height: 1.6;
+        color: #444;
+        box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+    }
+    div#modal7 div.modal-content > p {
+        font-size: small;
     }
 }
 
