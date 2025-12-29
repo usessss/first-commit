@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>포트폴리오</title>
-    <link rel="stylesheet" type="text/css" href="portfolio.css">
-    <link rel="stylesheet" type="text/css" href="reset.css">
+
+    <link rel="stylesheet" type="text/css" href="./css/portfolio.css">
+    <link rel="stylesheet" type="text/css" href="./css/reset.css">
 </head>
 
 <body>
     <!-- 헤더 섹션 -->
     <header class="header">
         <h1>
-            코드로 말하는 웹 퍼블리셔
+            코드로 말하는 퍼블리셔
 
             <button 
                 id="darkModeToggle" 
@@ -41,6 +42,7 @@
                 <li><a href="#about">소개</a></li>
                 <li><a href="#projects">프로젝트</a></li>
                 <li><a href="#education">교육</a></li>
+                <li><a href="#career">경력</a></li>
                 <li><a href="#certification">자격증</a></li>
                 <li><a href="#tool">기술 및 도구</a></li>
             </ul>
@@ -308,6 +310,10 @@
             <button class="carousel-control next" aria-label="Next slide">&#10095;</button>
         </div>
     </section>
+    <div class="playstopdiv">
+        <img class="playicon" src="./img/play.png" alt="재생 아이콘 버튼" title="재생 아이콘 버튼" onclick="startAutoSlide()">
+        <img class="stopicon" src="./img/stop.png" alt="일시정지 아이콘 버튼" title="일시정지 아이콘 버튼" onclick="stopAutoSlide()">
+    </div>
 
     <!-- 모달 팝업 -->
     <div id="modal1" class="modal">
@@ -1774,10 +1780,11 @@
             <p>
                 티추 카드게임 링크 바로가기 및 초보자도 이해 되는 룰 설명입니다.
             </p>
+            <b>🔗 배포 링크 : https://usessss.github.io/board-game</b>
         </div>
     </div>
 
-    <!-- 자격증 섹션 -->
+    <!-- 교육 섹션 -->
     <section id="education" class="education">
         <h2>👨‍🏫 교육</h2>
         <hr>
@@ -1789,6 +1796,19 @@
             🔹 프론트엔드 4명으로 진행한 1차는 웹 기반 SNS 프로젝트, 2차는 웹 애플리케이션 디버깅 및 최적화 프로젝트( 서비스명 : 타임캡슐 ) 팀 내외 발생 이슈 정리 및 문서화, 코드 개선 및 피드백 주도<br />
             🔹 직무 연합 팀( 기획/디자인/BE/FE )으로 진행한 실전 고객사 대응 프로젝트 온라인·오프라인 강연 플랫폼 기획 및 구현
         </p>
+    </section>
+
+    <!-- 경력 섹션 -->
+    <section id="career" class="career">
+        <h2>🧗‍♀️ 경력</h2>
+        <hr>
+        <p>
+            모바일웍스에서 3개월간 인턴으로 근무하며 나라사랑카드 대응개발 프로젝트의 퍼블리싱 업무를 담당❕<br />
+            👉 피그마 시안을 기반으로 디자이너와 협업하여<br />
+            카드 혜택·실적, 재발급, ARS 사후출금동의, 카드 신청·본인인증, 신청서 작성(간소화) 등 다양한 화면을 구현🌟<br /><br />
+            📅 2025년 9월 1일 ~ 11월 30일
+        </p>
+        <p class="info">자세한 건 프로젝트 파트에서 확인해주세요.</p>
     </section>
 
     <!-- 자격증 섹션 -->
@@ -1850,244 +1870,7 @@
         <p>&copy; 2024 나의 포트폴리오</p>
     </footer>
 
-    <script>
-        // 스크롤 시 애니메이션 트리거
-        window.addEventListener('scroll', () => {
-            const elements = document.querySelectorAll('.fade-in, .slide-in');
-            const windowHeight = window.innerHeight;
-
-            elements.forEach(element => {
-                const elementTop = element.getBoundingClientRect().top;
-
-                if (elementTop < windowHeight - 100) {
-                    element.classList.add('visible'); // visible 클래스 추가
-                }
-            });
-        });
-
-        // 캐러셀 제어
-        const carouselWrapper = document.querySelector('.carousel-wrapper');
-        const prevButton = document.querySelector('.carousel-control.prev');
-        const nextButton = document.querySelector('.carousel-control.next');
-        let currentIndex = 0;
-
-        prevButton.addEventListener('click', () => {
-            if (currentIndex > 0) {
-                currentIndex--;
-                updateCarousel();
-            }
-        });
-
-        nextButton.addEventListener('click', () => {
-            if (currentIndex < carouselWrapper.children.length - 1) {
-                currentIndex++;
-                updateCarousel();
-            }
-        });
-
-        function updateCarousel() {
-            const offset = -currentIndex * carouselWrapper.children[0].offsetWidth;
-            carouselWrapper.style.transform = `translateX(${offset}px)`;
-        }
-
-        // 스크롤 애니메이션을 위한 JavaScript
-        window.addEventListener('scroll', () => {
-            const aboutSection = document.querySelector('.about');
-            const projectsSection = document.querySelector('.projects');
-            const certificationSection = document.querySelector('.certification');
-            const toolSection = document.querySelector('.tool');
-
-            const fadeInSection = (section) => {
-                const sectionPos = section.getBoundingClientRect().top;
-                const screenPos = window.innerHeight / 1.3;
-
-                if(sectionPos < screenPos) {
-                    section.style.animation = 'fadeInUp 1s ease-in-out forwards';
-                }
-            };
-            fadeInSection(aboutSection);
-            fadeInSection(projectsSection);
-            fadeInSection(certificationSection);
-            fadeInSection(toolSection);
-        });
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const carousel = document.querySelector('.carousel');
-            const wrapper = document.querySelector('.carousel-wrapper');
-            const items = document.querySelectorAll('.carousel-item');
-            const prevBtn = document.querySelector('.carousel-control.prev');
-            const nextBtn = document.querySelector('.carousel-control.next');
-            
-            let currentIndex = 0;
-            let intervalId;
-            const intervalTime = 9000; // 9초 간격
-            
-            // 캐러셀 아이템 너비 조정 (부모 요소 기준)
-            function setItemWidth() {
-                const carouselWidth = carousel.offsetWidth;
-                items.forEach(item => {
-                    item.style.width = `${carouselWidth}px`;
-                });
-                updateCarousel();
-            }
-            
-            // 캐러셀 위치 업데이트
-            function updateCarousel() {
-                const carouselWidth = carousel.offsetWidth;
-                wrapper.style.transform = `translateX(-${currentIndex * carouselWidth}px)`;
-            }
-            
-            // 다음 슬라이드로 이동
-            function nextSlide() {
-                currentIndex = (currentIndex + 1) % items.length;
-                updateCarousel();
-            }
-            
-            // 이전 슬라이드로 이동
-            function prevSlide() {
-                currentIndex = (currentIndex - 1 + items.length) % items.length;
-                updateCarousel();
-            }
-            
-            // 자동 슬라이드 시작
-            function startAutoSlide() {
-                intervalId = setInterval(nextSlide, intervalTime);
-            }
-            
-            // 자동 슬라이드 정지
-            function stopAutoSlide() {
-                clearInterval(intervalId);
-            }
-            
-            // 이벤트 리스너 설정
-            nextBtn.addEventListener('click', () => {
-                stopAutoSlide();
-                nextSlide();
-                startAutoSlide();
-            });
-            
-            prevBtn.addEventListener('click', () => {
-                stopAutoSlide();
-                prevSlide();
-                startAutoSlide();
-            });
-            
-            // 마우스 호버 시 자동 슬라이드 일시 정지
-            carousel.addEventListener('mouseenter', stopAutoSlide);
-            carousel.addEventListener('mouseleave', startAutoSlide);
-            
-            // 초기 설정
-            setItemWidth();
-            startAutoSlide();
-            
-            // 윈도우 리사이즈 대응
-            window.addEventListener('resize', setItemWidth);
-        }); 
-
-        // 모달 열고 닫는 동작 처리하는 코드
-        document.addEventListener('DOMContentLoaded', () => {
-            const modalBtns = document.querySelectorAll('.open-modal');
-            const modals = document.querySelectorAll('.modal');
-            const closeBtns = document.querySelectorAll('.close');
-
-            modalBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const modalId = btn.getAttribute('data-modal');
-                    document.getElementById(modalId).style.display = 'block';
-                });
-            });
-
-            closeBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    btn.parentElement.parentElement.style.display = 'none';
-                });
-            });
-
-            window.addEventListener('click', (event) => {
-                if (event.target.classList.contains('modal')) {
-                    event.target.style.display = 'none';
-                }
-            });
-        });
-
-        // 팝업이 열릴 때 동영상 자동 재생
-        document.addEventListener('DOMContentLoaded', () => {
-            const modalBtns = document.querySelectorAll('.open-modal');
-            const closeBtns = document.querySelectorAll('.close');
-
-            modalBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const modalId = btn.getAttribute('data-modal');
-                    const modal = document.getElementById(modalId);
-                    modal.style.display = 'block';
-
-                    // 비디오 자동 재생
-                    const video = modal.querySelector('video');
-                    if (video) {
-                        video.play();
-                    }
-                });
-            });
-
-            closeBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const modal = btn.closest('.modal');
-                    modal.style.display = 'none';
-
-                    // 비디오 정지
-                    const video = modal.querySelector('video');
-                    if (video) {
-                        video.pause();
-                        video.currentTime = 0; // 비디오 시간 초기화
-                    }
-                });
-            });
-
-            window.addEventListener('click', (event) => {
-                if (event.target.classList.contains('modal')) {
-                    event.target.style.display = 'none';
-
-                    // 비디오 정지
-                    const video = event.target.querySelector('video');
-                    if (video) {
-                        video.pause();
-                        video.currentTime = 0;
-                    }
-                }
-            });
-        });
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const toggleBtn = document.getElementById('darkModeToggle');
-            const moonIcon = document.getElementById('moonIcon');
-            const sunIcon = document.getElementById('sunIcon');
-
-            // 다크 모드 상태를 localStorage에서 불러오기
-            const darkMode = localStorage.getItem('darkMode');
-            if (darkMode === 'enabled') {
-                document.body.classList.add('dark-mode');
-                moonIcon.style.display = 'inline';
-                sunIcon.style.display = 'none';
-            }
-
-            // 토글 버튼 클릭 이벤트
-            toggleBtn.addEventListener('click', () => {
-                document.body.classList.toggle('dark-mode');
-
-                // 다크 모드 상태를 localStorage에 저장
-                if (document.body.classList.contains('dark-mode')) {
-                    localStorage.setItem('darkMode', 'enabled');
-                    moonIcon.style.display = 'inline';
-                    sunIcon.style.display = 'none';
-                } else {
-                    localStorage.setItem('darkMode', null);
-                    moonIcon.style.display = 'none';
-                    sunIcon.style.display = 'inline';
-                }
-            });
-        });
-
-    </script>
+    <script src="./js/index.js"></script>
 </body>
 </html>
 

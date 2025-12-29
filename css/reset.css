@@ -24,7 +24,7 @@ img {
 
 /* 요소 CSS에서 유연성 보강 */
 header {
-    background-image: url("./img/background.jpg");
+    background-image: url("../img/background.jpg");
     text-align: center;
     background-size: cover;
     background-position: center;
